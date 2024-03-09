@@ -23,8 +23,8 @@ public class Movement : MonoBehaviour
 
     void MoveControl()
     {
-        float hareket = Input.GetAxis("Horizontal");
-        Vector2 moveVector = new Vector2(hareket, rb.velocity.y);
+        float move = Input.GetAxis("Horizontal");
+        Vector2 moveVector = new Vector2(move, rb.velocity.y);
         rb.velocity = new Vector2(moveVector.x * moveSpeed, moveVector.y);
     }
 
