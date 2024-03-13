@@ -7,9 +7,15 @@ public class deadZone : MonoBehaviour
     public Camera cam;
     public GameObject player;
     public bool gameOver;
+    [SerializeField] Vector3 deadzonepos = new Vector3(0, 0, 0);
+
     private void Update()
     {
-        transform.position = cam.transform.position;
+        if (deadzonepos.y < cam.transform.position.y)
+        {
+            deadzonepos.y = cam.transform.position.y + 1.5f;
+            transform.position = cam.transform.position;
+        }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {

@@ -24,7 +24,7 @@ public class platformSpawner : MonoBehaviour
     {
         if (spawnerpos.y < cam.transform.position.y)
         {
-            spawnerpos.y = cam.transform.position.y + 2f;
+            spawnerpos.y +=  1.5f;
             transform.position = cam.transform.position;
         }
         Vector2 min = spawnArea.bounds.min;
