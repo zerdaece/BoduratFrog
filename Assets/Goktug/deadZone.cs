@@ -7,7 +7,7 @@ public class deadZone : MonoBehaviour
     public Camera cam;
     public GameObject player;
     public bool gameOver;
-    [SerializeField] Vector3 deadzonepos = new Vector3(0, 0, 0);
+    [SerializeField] Vector3 deadzonepos = new Vector3(0, 0, 0); 
 
     private void Update()
     {
@@ -17,12 +17,13 @@ public class deadZone : MonoBehaviour
             transform.position = cam.transform.position;
         }
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision) //Oyunu durdurmak için
     {
         if (collision.CompareTag("Player"))
         {
             Time.timeScale = 0f;
             gameOver = true;
+            Debug.Log("ÖLDÜN");
         }
     }
-}
+}//10 numaara kod yazmışın kral
