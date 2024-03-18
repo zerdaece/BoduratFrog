@@ -7,7 +7,7 @@ public class JumpMovement : MonoBehaviour
     public float lowJumpMultiplier = 2f; // the multiplier applied to the low jumping gravity
 
     private Rigidbody2D rb; // the character's rigidbody
-    private bool isJumping = true; // a flag to check if the character is currently jumping
+    private bool isGrounded = false; // a flag to check if the character is grounded
 
     void Start()
     {
@@ -21,12 +21,12 @@ public class JumpMovement : MonoBehaviour
         float moveHorizontal = Input.GetAxis("Horizontal");
         rb.velocity = new Vector2(moveHorizontal * 5f, rb.velocity.y);
 
-        // apply automatic jumping and falling
-        if (isJumping)
+        // apply automatic jumping and falling only when grounded
+        if (isGrounded)
         {
             // apply upward force to jump
             rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
-            isJumping = false;
+            isGrounded = false;
         }
         else
         {
@@ -37,15 +37,17 @@ public class JumpMovement : MonoBehaviour
             }
             else if (rb.velocity.y > 0 && rb.velocity.y < 5f)
             {
-                rb.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;//physics2D ile otomatik zıplama sağlanıyor
+                rb.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
             }
         }
     }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        // set the jumping flag to true when colliding with a platform
-        isJumping = true;
+        // set the grounded flag to true when colliding with a platform from the top
+        if (collision.contacts[0].normal.y > 0.5f)
+        {
+            isGrounded = true;
+        }
     }
 }
-
