@@ -12,6 +12,7 @@ public class platformSpawner : MonoBehaviour
     public Camera cam;
     public int platformNumber;
     public int minNumber;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -25,7 +26,7 @@ public class platformSpawner : MonoBehaviour
         if (spawnerpos.y < cam.transform.position.y)
         {
             spawnerpos.y +=  1.5f;
-            transform.position = cam.transform.position;
+            transform.position = spawnerpos;
         }
         Vector2 min = spawnArea.bounds.min;
         Vector2 max = spawnArea.bounds.max;
@@ -48,8 +49,10 @@ public class platformSpawner : MonoBehaviour
         if (other.CompareTag("Zemin"))
         {
             Destroy(other.gameObject);
-            print(other.name);
+            print(ScoreCounter.Score);
+            ScoreCounter.Score++;
             platformNumber--;
+
         }
 
     }

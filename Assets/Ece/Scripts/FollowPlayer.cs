@@ -6,22 +6,22 @@ public class FollowPlayer : MonoBehaviour
 {
     public GameObject player ;
     private Vector3 offset = new Vector3(0,3,-2);
-    private Vector3 playerpos = new Vector3(0, 0, 0);//ehm bunu ben ekledim :p -goktug
+    private Vector3 campos = new Vector3(0, 0, 0);//ehm bunu ben ekledim :p -goktug
 
     // Start is called before the first frame update
     void Start()
     {
-        playerpos.y = player.transform.position.y;
+        campos.y = player.transform.position.y;
     }
 
     // Update is called once per frame
     void LateUpdate()
     {
-        if (playerpos.y < (player.transform.position.y + 1f))
+        if (campos.y < (player.transform.position.y - 2f))
         {
-            playerpos.y = player.transform.position.y;
+            campos.y = player.transform.position.y - 2f;
         }
-        Vector3 newPosition = new Vector3(transform.position.x, playerpos.y + offset.y, transform.position.z);
+        Vector3 newPosition = new Vector3(transform.position.x, campos.y + offset.y, transform.position.z);
         transform.position = newPosition;
         
     }

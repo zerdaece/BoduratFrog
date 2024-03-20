@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class Star : MonoBehaviour
+public class starSpawner : MonoBehaviour
 {
     public Camera cam;
     public GameObject StarObject;
