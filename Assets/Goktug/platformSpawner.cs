@@ -52,7 +52,6 @@ public class platformSpawner : MonoBehaviour
             print(ScoreCounter.Score);
             ScoreCounter.Score++;
             platformNumber--;
-
         }
 
     }

@@ -7,7 +7,8 @@ public class deadZone : MonoBehaviour
     public Camera cam;
     public GameObject player;
     public bool gameOver;
-    [SerializeField] Vector3 deadzonepos = new Vector3(0, 0, 0); 
+    [SerializeField] Vector3 deadzonepos = new Vector3(0, 0, 0);
+    public static bool alive;
 
     private void Update()
     {
@@ -24,6 +25,9 @@ public class deadZone : MonoBehaviour
             Time.timeScale = 0f;
             gameOver = true;
             Debug.Log("ÖLDÜN");
+            alive = false;
+            CoinSystem.UpdateCoinCount(ScoreCounter.Score);
+            print(CoinSystem.coin);
         }
     }
 }//10 numaara kod yazmışın kral
