@@ -13,6 +13,7 @@ public class platformSpawner : MonoBehaviour
     public Camera cam;
     public int platformNumber;
     public int minNumber;
+    [SerializeField] private float speed;
     
     
 
@@ -25,11 +26,8 @@ public class platformSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (spawnerpos.y < cam.transform.position.y)
-        {
-            spawnerpos.y +=  1.5f;
-            transform.position = spawnerpos;
-        }
+
+        transform.position = Vector3.MoveTowards(transform.position, cam.transform.position, speed);
         Vector2 min = spawnArea.bounds.min;
         Vector2 max = spawnArea.bounds.max;
         if (platformNumber < minNumber)
