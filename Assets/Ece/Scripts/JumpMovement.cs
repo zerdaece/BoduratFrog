@@ -1,4 +1,6 @@
+using System.Runtime.InteropServices;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class JumpMovement : MonoBehaviour
 {
@@ -8,6 +10,7 @@ public class JumpMovement : MonoBehaviour
 
     private Rigidbody2D rb; // the character's rigidbody
     private bool isGrounded = false; // a flag to check if the character is grounded
+   public Text ScoreText;
 
     void Start()
     {
@@ -18,15 +21,24 @@ public class JumpMovement : MonoBehaviour
     void FixedUpdate()
     {
         // apply horizontal movement
-        float moveHorizontal = Input.GetAxis("Horizontal");
-        rb.velocity = new Vector2(moveHorizontal * 5f, rb.velocity.y);
-
+        /*float moveHorizontal = Input.GetAxis("Horizontal");
+        rb.velocity = new Vector2(moveHorizontal * 5f, rb.velocity.y);*/
+        
+        if(Input.touchCount > 0)
+        {
+            Touch touch = Input.GetTouch(0);
+            if(touch.phase == TouchPhase.Moved)
+            {
+                rb.velocity = new Vector2(touch.deltaPosition.x /2.5f, rb.velocity.y);
+            }
+        }
         // apply automatic jumping and falling only when grounded
         if (isGrounded)
         {
             // apply upward force to jump
             rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
             isGrounded = false;
+            ScoreText.text = ScoreCounter.Score.ToString();
         }
         else
         {

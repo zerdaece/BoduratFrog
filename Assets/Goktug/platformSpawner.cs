@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class platformSpawner : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class platformSpawner : MonoBehaviour
     public Camera cam;
     public int platformNumber;
     public int minNumber;
+    
     
 
     // Start is called before the first frame update
@@ -39,6 +41,7 @@ public class platformSpawner : MonoBehaviour
             GameObject newPlatform = Instantiate(platform, randomPosition, Quaternion.identity);
             newPlatform.transform.parent = Platforms.transform;
             platformNumber++;
+           
         }
         
 
