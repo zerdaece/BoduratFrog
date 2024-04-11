@@ -4,17 +4,20 @@ using UnityEngine;
 
 public class star : MonoBehaviour
 {
+    private GameObject ScoreCounter;
+    private ScoreCounter scoreCounter;
     // Start is called before the first frame update
     void Start()
     {
-        
+        ScoreCounter = GameObject.Find("ScoreCounter");
+
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
-            ScoreCounter.Score += 5;
+            scoreCounter.Score += 5;
             Destroy(gameObject);
         }
 

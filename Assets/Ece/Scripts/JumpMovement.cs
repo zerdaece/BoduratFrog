@@ -7,13 +7,15 @@ public class JumpMovement : MonoBehaviour
     public float jumpForce = 5f; // the upward force applied when jumping
     public float fallMultiplier = 2.5f; // the multiplier applied to the falling gravity
     public float lowJumpMultiplier = 2f; // the multiplier applied to the low jumping gravity
-
+    private GameObject ScoreCounter;
+    private ScoreCounter scoreCounter;
     private Rigidbody2D rb; // the character's rigidbody
     private bool isGrounded = false; // a flag to check if the character is grounded
    public Text ScoreText;
 
     void Start()
     {
+        ScoreCounter = GameObject.Find("ScoreCounter");
         // get the character's rigidbody component
         rb = GetComponent<Rigidbody2D>();
     }
@@ -38,7 +40,7 @@ public class JumpMovement : MonoBehaviour
             // apply upward force to jump
             rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
             isGrounded = false;
-            ScoreText.text = ScoreCounter.Score.ToString();
+            ScoreText.text = scoreCounter.Score.ToString();
         }
         else
         {

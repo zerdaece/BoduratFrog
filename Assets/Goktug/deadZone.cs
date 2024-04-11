@@ -4,12 +4,18 @@ using UnityEngine;
 
 public class deadZone : MonoBehaviour
 {
+    private GameObject ScoreCounter;
+    private ScoreCounter scoreCounter;
     public Camera cam;
     public GameObject player;
     public bool gameOver;
     [SerializeField] Vector3 deadzonepos = new Vector3(0, 0, 0);
     public static bool alive;
+    private void Start()
+    {
+        ScoreCounter = GameObject.Find("ScoreCounter");
 
+    }
     private void Update()
     {
         if (deadzonepos.y < cam.transform.position.y)
@@ -26,7 +32,7 @@ public class deadZone : MonoBehaviour
             gameOver = true;
             Debug.Log("ÖLDÜN");
             alive = false;
-            CoinSystem.UpdateCoinCount(ScoreCounter.Score);
+            CoinSystem.UpdateCoinCount(scoreCounter.Score);
             print(CoinSystem.coin);
         }
     }
