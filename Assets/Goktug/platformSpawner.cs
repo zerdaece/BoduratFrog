@@ -34,7 +34,7 @@ public class platformSpawner : MonoBehaviour
         if (platformNumber < minNumber)
         {
             Vector2 randomPosition;
-            float distanceThreshold = 2f; // adjust this value to change the minimum distance between platforms
+            float distanceThreshold = 0.2f; // adjust this value to change the minimum distance between platforms
 
 
             // Generate random position within the spawn area
@@ -42,7 +42,7 @@ public class platformSpawner : MonoBehaviour
             {
                 randomPosition = new Vector2(Random.Range(min.x, max.x), Random.Range(min.y, max.y));
             }
-            while (Mathf.Abs(randomPosition.y - lastPlatformPosition.y) < distanceThreshold);
+            while ((randomPosition.y - lastPlatformPosition.y) < distanceThreshold);
 
 
             // Spawn the platform at the random position

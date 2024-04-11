@@ -352,6 +352,10 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: -6904416358078678697, guid: b87d851a235c242438164c72cd5afa69, type: 3}
+      propertyPath: PlatformSpawner
+      value: 
+      objectReference: {fileID: 885186723}
     - target: {fileID: 5530771305658836162, guid: b87d851a235c242438164c72cd5afa69, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -523,7 +527,7 @@ SpriteRenderer:
   m_Size: {x: 2.5, y: 2.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &423956732
@@ -607,7 +611,7 @@ SpriteRenderer:
   m_Size: {x: 2.5, y: 2.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &519420028
@@ -1074,6 +1078,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e2814d0cfb671446bb30c9b71300c42, type: 3}
+--- !u!1 &885186723 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7143731871347904341, guid: 0e2814d0cfb671446bb30c9b71300c42, type: 3}
+  m_PrefabInstance: {fileID: 885186722}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &896712749
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1697,7 +1706,7 @@ SpriteRenderer:
   m_Size: {x: 2.5, y: 2.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1001 &1619347442
@@ -1994,7 +2003,7 @@ SpriteRenderer:
   m_Size: {x: 2.5, y: 2.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1844881028
@@ -2078,7 +2087,7 @@ SpriteRenderer:
   m_Size: {x: 2.5, y: 2.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1862009876 stripped
