@@ -72,11 +72,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12b3ba731fd14c54586e265ead1d2a4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Platforms: {fileID: 0}
   platform: {fileID: 0}
-  spawnArea: {fileID: 0}
+  spawnArea: {fileID: 1294992908265047080}
+  spawnerpos: {x: 0, y: 0, z: 0}
   destroyArea: {fileID: 0}
-  platformNumber: 0
-  minNumber: 0
+  cam: {fileID: 0}
+  platformNumber: 9
+  minNumber: 8
+  speed: 0.2
 --- !u!61 &3311446168360880069
 BoxCollider2D:
   m_ObjectHideFlags: 0
