@@ -11,8 +11,7 @@ public class JumpMovement : MonoBehaviour
     private ScoreCounter scoreCounter;
     private Rigidbody2D rb; // the character's rigidbody
     private bool isGrounded = false; // a flag to check if the character is grounded
-   public Text ScoreText;
-
+   
     void Start()
     {
         ScoreCounter = GameObject.Find("ScoreCounter");
@@ -31,7 +30,7 @@ public class JumpMovement : MonoBehaviour
             Touch touch = Input.GetTouch(0);
             if(touch.phase == TouchPhase.Moved)
             {
-                rb.velocity = new Vector2(touch.deltaPosition.x /2.5f, rb.velocity.y);
+                rb.velocity = new Vector2(touch.deltaPosition.x /4f, rb.velocity.y);
             }
         }
         // apply automatic jumping and falling only when grounded
@@ -40,7 +39,7 @@ public class JumpMovement : MonoBehaviour
             // apply upward force to jump
             rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
             isGrounded = false;
-            ScoreText.text = scoreCounter.Score.ToString();
+            
         }
         else
         {
