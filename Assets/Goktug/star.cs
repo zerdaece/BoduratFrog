@@ -10,7 +10,7 @@ public class star : MonoBehaviour
     void Start()
     {
         ScoreCounter = GameObject.Find("ScoreCounter");
-
+        scoreCounter = ScoreCounter.GetComponent<ScoreCounter>();
     }
 
     void OnTriggerEnter2D(Collider2D other)

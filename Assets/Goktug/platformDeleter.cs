@@ -14,6 +14,7 @@ public class platformDeleter : MonoBehaviour
     void Start()
     {
         ScoreCounter = GameObject.Find("ScoreCounter");
+        scoreCounter = ScoreCounter.GetComponent<ScoreCounter>();
         platformSpawner = PlatformSpawner.GetComponent<platformSpawner>();
         transform.position = cam.transform.position;
     }
