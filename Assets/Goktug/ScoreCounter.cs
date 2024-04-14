@@ -12,6 +12,7 @@ public class ScoreCounter : MonoBehaviour
     
     void Awake()
     {
+        Player = GameObject.FindGameObjectWithTag("Player");
         transform.position = Player.transform.position;
     }
 

@@ -17,7 +17,7 @@ public class deadZone : MonoBehaviour
     private void Start()
     {
         ScoreCounter = GameObject.Find("ScoreCounter");
-
+        scoreCounter = ScoreCounter.GetComponent<ScoreCounter>();
     }
     private void Update()
     {
