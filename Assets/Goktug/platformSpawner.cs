@@ -15,6 +15,7 @@ public class platformSpawner : MonoBehaviour
     public int minNumber;
     public float speed;
     private Vector2 lastPlatformPosition;
+    
 
 
 
@@ -49,6 +50,7 @@ public class platformSpawner : MonoBehaviour
             GameObject newPlatform = Instantiate(platform, randomPosition, Quaternion.identity);
             newPlatform.transform.parent = Platforms.transform;
             platformNumber++;
+            
             // update the last platform position
             lastPlatformPosition = randomPosition;
         }

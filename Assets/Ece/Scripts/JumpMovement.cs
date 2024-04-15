@@ -30,7 +30,7 @@ public class JumpMovement : MonoBehaviour
             Touch touch = Input.GetTouch(0);
             if(touch.phase == TouchPhase.Moved)
             {
-                rb.velocity = new Vector2(touch.deltaPosition.x /4f, rb.velocity.y);
+                rb.velocity = new Vector2(touch.deltaPosition.x /5.5f, rb.velocity.y);
             }
         }
         // apply automatic jumping and falling only when grounded
