@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
 {
   // Start is called before the first frame update
   public GameObject playButton;
+  public GameObject soundButton;
+  public GameObject etiketButton;
   //public Camera cam;
   public GameObject score;
   public GameObject lastScore;
@@ -18,18 +20,19 @@ public class GameManager : MonoBehaviour
   private void Awake()
   {
     Time.timeScale = 0;
-
-    //score.SetActive(true);
+    soundButton.SetActive(true);
+    etiketButton.SetActive(true);
+    score.SetActive(true);
     // cam.transform.position = new Vector3(0, 3,-1);
 
   }
 
-  public void Pause()
+  /*public void Pause()
   {
     Time.timeScale = 0;
     score.SetActive(true);
     //lastScore.SetActive(true);
-  }
+  }*/
 
   // Update is called once per frame
   public void Play()
@@ -37,6 +40,8 @@ public class GameManager : MonoBehaviour
     Time.timeScale = 1;
     playButton.SetActive(false);
     score.SetActive(true);
+    soundButton.SetActive(true);
+    etiketButton.SetActive(true);
     //lastScore.SetActive(false);
   }
   public void Retry()
