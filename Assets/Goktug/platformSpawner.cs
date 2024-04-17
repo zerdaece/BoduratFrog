@@ -25,7 +25,7 @@ public class platformSpawner : MonoBehaviour
     void Update()
     {
 
-        transform.position = Vector3.MoveTowards(transform.position, Camera.main.transform.position, speed);
+        transform.position = Camera.main.transform.position;
         Vector2 min = spawnArea.bounds.min;
         Vector2 max = spawnArea.bounds.max;
         if (platformNumber < minNumber)

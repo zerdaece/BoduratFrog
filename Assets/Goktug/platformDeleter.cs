@@ -21,7 +21,7 @@ public class platformDeleter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = Vector3.MoveTowards(transform.position,Camera.main.transform.position,platformSpawner.speed);
+        transform.position = Camera.main.transform.position;
     }
     void OnTriggerEnter2D(Collider2D other)
     {
