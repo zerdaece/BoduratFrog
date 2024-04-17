@@ -14,7 +14,9 @@ public class deadZone : MonoBehaviour
     public GameObject retry;
     public GameObject quit;
     public GameManager gameManager;
+    public GameObject lastScore;
     [SerializeField] Vector3 deadzonepos = new Vector3(0, 0, 0);
+
     public static bool alive;
     private void Start()
     {
@@ -36,14 +38,18 @@ public class deadZone : MonoBehaviour
             Time.timeScale = 0f;
             gameOver = true;
             Debug.Log("ÖLDÜN");
+
             //retry.SetActive(true);
             //quit.SetActive(true);
+            
             gameManager.Retry();
+            //lastScore.SetActive(true);
             alive = false;
             CoinSystem.UpdateCoinCount(scoreCounter.Score);
             print(CoinSystem.coin);
-            
+
         }
     }
-  
+
+
 }//10 numaara kod yazmışın kral

@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class JumpMovement : MonoBehaviour
 {
-    public float jumpForce = 5f; // the upward force applied when jumping
+    public float jumpForce = 4f; // the upward force applied when jumping
     public float fallMultiplier = 2.5f; // the multiplier applied to the falling gravity
     public float lowJumpMultiplier = 2f; // the multiplier applied to the low jumping gravity
     public  Camera cam;

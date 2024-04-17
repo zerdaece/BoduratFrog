@@ -9,6 +9,7 @@ public class ScoreCounter : MonoBehaviour
     public GameObject Player;
     public int Score = 0;
     public Text scoreText;
+    public GameObject scoree_ui;
     
     void Awake()
     {
@@ -26,6 +27,7 @@ public class ScoreCounter : MonoBehaviour
         if (other.CompareTag("Zemin"))
             if (other.GetComponent<platform>().counted == false)
             {  
+                scoree_ui.SetActive(true);
                 scoreText.text =  Score.ToString();
                 Score++;
                 
