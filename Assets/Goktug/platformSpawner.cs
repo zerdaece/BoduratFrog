@@ -32,7 +32,7 @@ public class platformSpawner : MonoBehaviour
         {
             Vector2 randomPosition;
             // Generate random position within the spawn area
-            randomPosition = new Vector2(Random.Range(min.x, max.x), spawnArea.transform.position.y);
+            randomPosition = new Vector2(Random.Range(min.x, max.x), spawnArea.bounds.center.y);
             // Spawn the platform at the random position
             GameObject newPlatform = Instantiate(platform, randomPosition, Quaternion.identity);
             newPlatform.transform.parent = Platforms.transform;

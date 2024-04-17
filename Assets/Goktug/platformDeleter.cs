@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class platformDeleter : MonoBehaviour
 {
-    public Camera cam;
     private GameObject ScoreCounter;
     private ScoreCounter scoreCounter;
     platformSpawner platformSpawner;
@@ -16,13 +15,13 @@ public class platformDeleter : MonoBehaviour
         ScoreCounter = GameObject.Find("ScoreCounter");
         scoreCounter = ScoreCounter.GetComponent<ScoreCounter>();
         platformSpawner = PlatformSpawner.GetComponent<platformSpawner>();
-        transform.position = cam.transform.position;
+        transform.position = Camera.main.transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.position = Vector3.MoveTowards(transform.position,cam.transform.position,platformSpawner.speed);
+        transform.position = Vector3.MoveTowards(transform.position,Camera.main.transform.position,platformSpawner.speed);
     }
     void OnTriggerEnter2D(Collider2D other)
     {
