@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
   {
     Time.timeScale = 0;
 
-    score.SetActive(true);
+    //score.SetActive(true);
     // cam.transform.position = new Vector3(0, 3,-1);
 
   }
@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
   {
     Time.timeScale = 0;
     score.SetActive(true);
-    lastScore.SetActive(true);
+    //lastScore.SetActive(true);
   }
 
   // Update is called once per frame
@@ -37,22 +37,24 @@ public class GameManager : MonoBehaviour
     Time.timeScale = 1;
     playButton.SetActive(false);
     score.SetActive(true);
-    lastScore.SetActive(false);
+    //lastScore.SetActive(false);
   }
   public void Retry()
   {
     Time.timeScale = 1;
-    backgroundAnim.SetActive(true);
-    Invoke(nameof(PlayAnim), 1.4f);
+    //backgroundAnim.SetActive(true);
+    //Invoke(nameof(PlayAnim), 1.4f);
+    SceneManager.LoadScene(0);
+    //lastScore.SetActive(true);
     score.SetActive(true);
   }
-  private void PlayAnim()
+  /*private void PlayAnim()
   {
 
 
     SceneManager.LoadScene(0);
     lastScore.SetActive(true);
-  }
+  }*/
 
   public void Quit()
   {

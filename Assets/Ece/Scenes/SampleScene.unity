@@ -694,7 +694,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 771b3f46f717b8b43896196fa1bb4356, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2359,11 +2359,11 @@ PrefabInstance:
     - target: {fileID: -2780703163189299734, guid: 7c33909c844d8c04290bea7747fa426d, type: 3}
       propertyPath: scoreText
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 648921777}
     - target: {fileID: -2780703163189299734, guid: 7c33909c844d8c04290bea7747fa426d, type: 3}
       propertyPath: scoree_ui
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 648921775}
     - target: {fileID: 2854186618803327914, guid: 7c33909c844d8c04290bea7747fa426d, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -3060,7 +3060,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playButton: {fileID: 516683718}
-  score: {fileID: 0}
+  score: {fileID: 648921775}
   lastScore: {fileID: 1263278116}
   backgroundAnim: {fileID: 2085509262}
 --- !u!4 &1460693915
@@ -3751,7 +3751,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: d7600f88062c09b42b8b30a490617ddd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -4480,7 +4480,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2085509263
 RectTransform:
   m_ObjectHideFlags: 0
