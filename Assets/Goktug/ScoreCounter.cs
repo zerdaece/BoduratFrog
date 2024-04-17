@@ -26,7 +26,7 @@ public class ScoreCounter : MonoBehaviour
         if (other.CompareTag("Zemin"))
             if (other.GetComponent<platform>().counted == false)
             {  
-                scoreText.text = "Score: " + Score.ToString();
+                scoreText.text =  Score.ToString();
                 Score++;
                 
                 other.GetComponent<platform>().counted = true;

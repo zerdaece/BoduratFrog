@@ -7,6 +7,7 @@ public class JumpMovement : MonoBehaviour
     public float jumpForce = 5f; // the upward force applied when jumping
     public float fallMultiplier = 2.5f; // the multiplier applied to the falling gravity
     public float lowJumpMultiplier = 2f; // the multiplier applied to the low jumping gravity
+    public  Camera cam;
     private GameObject ScoreCounter;
     private ScoreCounter scoreCounter;
     private Rigidbody2D rb; // the character's rigidbody
@@ -17,6 +18,9 @@ public class JumpMovement : MonoBehaviour
         ScoreCounter = GameObject.Find("ScoreCounter");
         // get the character's rigidbody component
         rb = GetComponent<Rigidbody2D>();
+       // Time.timeScale = 0f;
+       // cam.transform.position = new Vector3(0, 0, -10);
+       
     }
 
     void FixedUpdate()
