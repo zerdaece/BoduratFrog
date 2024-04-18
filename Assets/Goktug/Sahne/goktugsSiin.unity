@@ -532,6 +532,14 @@ PrefabInstance:
       propertyPath: PlatformSpawner
       value: 
       objectReference: {fileID: 885186723}
+    - target: {fileID: 1954282482969888930, guid: b87d851a235c242438164c72cd5afa69, type: 3}
+      propertyPath: m_Size.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1954282482969888930, guid: b87d851a235c242438164c72cd5afa69, type: 3}
+      propertyPath: m_Offset.y
+      value: -6
+      objectReference: {fileID: 0}
     - target: {fileID: 5530771305658836162, guid: b87d851a235c242438164c72cd5afa69, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -1609,7 +1617,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2451390698564265393, guid: 694184a1425d98f47af7890fbbf1fc12, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.4
+      value: 7.66
       objectReference: {fileID: 0}
     - target: {fileID: 2451390698564265393, guid: 694184a1425d98f47af7890fbbf1fc12, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1796,7 +1804,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1294992908265047080, guid: 0e2814d0cfb671446bb30c9b71300c42, type: 3}
       propertyPath: m_Offset.y
-      value: 5
+      value: 4.5
       objectReference: {fileID: 0}
     - target: {fileID: 3311446168360880069, guid: 0e2814d0cfb671446bb30c9b71300c42, type: 3}
       propertyPath: m_Size.x
@@ -1820,7 +1828,7 @@ PrefabInstance:
       objectReference: {fileID: 519420031}
     - target: {fileID: 6060834497641143437, guid: 0e2814d0cfb671446bb30c9b71300c42, type: 3}
       propertyPath: speed
-      value: 0.2
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6060834497641143437, guid: 0e2814d0cfb671446bb30c9b71300c42, type: 3}
       propertyPath: platform
@@ -1832,7 +1840,7 @@ PrefabInstance:
       objectReference: {fileID: 383904915}
     - target: {fileID: 6060834497641143437, guid: 0e2814d0cfb671446bb30c9b71300c42, type: 3}
       propertyPath: minNumber
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 7143731871347904341, guid: 0e2814d0cfb671446bb30c9b71300c42, type: 3}
       propertyPath: m_Name
@@ -1842,7 +1850,8 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3311446168360880069, guid: 0e2814d0cfb671446bb30c9b71300c42, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0e2814d0cfb671446bb30c9b71300c42, type: 3}
 --- !u!1 &885186723 stripped
 GameObject:
@@ -3060,6 +3069,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playButton: {fileID: 516683718}
+  soundButton: {fileID: 0}
+  etiketButton: {fileID: 0}
   score: {fileID: 648921775}
   lastScore: {fileID: 1263278116}
   backgroundAnim: {fileID: 2085509262}
