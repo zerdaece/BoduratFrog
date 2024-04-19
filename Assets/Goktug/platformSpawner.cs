@@ -11,6 +11,7 @@ public class platformSpawner : MonoBehaviour
     public int platformNumber;
     public int minNumber;
     public float speed;
+    private GameObject lastPlatform;
 
 
 
@@ -34,11 +35,22 @@ public class platformSpawner : MonoBehaviour
 
             // Generate random position within the spawn area
            
-                    randomPosition = new Vector2(Random.Range(min.x, max.x), spawnArea.bounds.center.y);
+            randomPosition = new Vector2(Random.Range(min.x, max.x), spawnArea.bounds.center.y);
+
+
             // Spawn the platform at the random position
             GameObject newPlatform = Instantiate(platform, randomPosition, Quaternion.identity);
             newPlatform.transform.parent = Platforms.transform;
             platformNumber++;
+            if (lastPlatform != null)
+            {
+                float platformHeight = newPlatform.GetComponent<SpriteRenderer>().bounds.size.y; // Yeni platformun yüksekliği
+                float lastPlatformY = lastPlatform.transform.position.y; // Önceki platformun y eksenindeki pozisyonu
+                newPlatform.transform.position = new Vector2(newPlatform.transform.position.x, lastPlatformY + platformHeight + 1.2f);
+            }
+
+            // Yeni platformu önceki platform olarak ata
+            lastPlatform = newPlatform;
         }
 
 

@@ -218,13 +218,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: leaf (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 2451390698564265357, guid: 694184a1425d98f47af7890fbbf1fc12, type: 3}
+      propertyPath: m_SurfaceArc
+      value: 150
+      objectReference: {fileID: 0}
     - target: {fileID: 2451390698564265359, guid: 694184a1425d98f47af7890fbbf1fc12, type: 3}
       propertyPath: m_Size.x
-      value: 3
+      value: 2.8
       objectReference: {fileID: 0}
     - target: {fileID: 2451390698564265359, guid: 694184a1425d98f47af7890fbbf1fc12, type: 3}
       propertyPath: m_Size.y
-      value: 0.1
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2451390698564265359, guid: 694184a1425d98f47af7890fbbf1fc12, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2451390698564265359, guid: 694184a1425d98f47af7890fbbf1fc12, type: 3}
+      propertyPath: m_Offset.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2451390698564265393, guid: 694184a1425d98f47af7890fbbf1fc12, type: 3}
       propertyPath: m_RootOrder
@@ -511,7 +523,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f8247fad437aac4b9f5e83283ada6c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 2123985198}
+  player: {fileID: 651287849}
 --- !u!4 &315405524 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2451390698564265393, guid: 694184a1425d98f47af7890fbbf1fc12, type: 3}
@@ -595,7 +607,7 @@ GameObject:
   - component: {fileID: 378386471}
   - component: {fileID: 378386470}
   m_Layer: 5
-  m_Name: MediaButton
+  m_Name: soundButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1385,7 +1397,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f8247fad437aac4b9f5e83283ada6c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 2123985198}
+  player: {fileID: 651287849}
 --- !u!1 &647964082
 GameObject:
   m_ObjectHideFlags: 0
@@ -1951,13 +1963,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: leaf (16)
       objectReference: {fileID: 0}
+    - target: {fileID: 2451390698564265357, guid: 694184a1425d98f47af7890fbbf1fc12, type: 3}
+      propertyPath: m_SurfaceArc
+      value: 150
+      objectReference: {fileID: 0}
     - target: {fileID: 2451390698564265359, guid: 694184a1425d98f47af7890fbbf1fc12, type: 3}
       propertyPath: m_Size.x
-      value: 3
+      value: 2.8
       objectReference: {fileID: 0}
     - target: {fileID: 2451390698564265359, guid: 694184a1425d98f47af7890fbbf1fc12, type: 3}
       propertyPath: m_Size.y
-      value: 0.1
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2451390698564265359, guid: 694184a1425d98f47af7890fbbf1fc12, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2451390698564265359, guid: 694184a1425d98f47af7890fbbf1fc12, type: 3}
+      propertyPath: m_Offset.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2451390698564265393, guid: 694184a1425d98f47af7890fbbf1fc12, type: 3}
       propertyPath: m_RootOrder
@@ -2235,6 +2259,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1294992908265047080, guid: 0e2814d0cfb671446bb30c9b71300c42, type: 3}
+      propertyPath: m_Size.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1294992908265047080, guid: 0e2814d0cfb671446bb30c9b71300c42, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
@@ -2304,13 +2332,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: leaf (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 2451390698564265357, guid: 694184a1425d98f47af7890fbbf1fc12, type: 3}
+      propertyPath: m_SurfaceArc
+      value: 150
+      objectReference: {fileID: 0}
     - target: {fileID: 2451390698564265359, guid: 694184a1425d98f47af7890fbbf1fc12, type: 3}
       propertyPath: m_Size.x
-      value: 3
+      value: 2.8
       objectReference: {fileID: 0}
     - target: {fileID: 2451390698564265359, guid: 694184a1425d98f47af7890fbbf1fc12, type: 3}
       propertyPath: m_Size.y
-      value: 0.21
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2451390698564265359, guid: 694184a1425d98f47af7890fbbf1fc12, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2451390698564265359, guid: 694184a1425d98f47af7890fbbf1fc12, type: 3}
+      propertyPath: m_Offset.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2451390698564265393, guid: 694184a1425d98f47af7890fbbf1fc12, type: 3}
       propertyPath: m_RootOrder
@@ -2876,13 +2916,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: leaf (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 2451390698564265357, guid: 694184a1425d98f47af7890fbbf1fc12, type: 3}
+      propertyPath: m_SurfaceArc
+      value: 150
+      objectReference: {fileID: 0}
     - target: {fileID: 2451390698564265359, guid: 694184a1425d98f47af7890fbbf1fc12, type: 3}
       propertyPath: m_Size.x
-      value: 3
+      value: 2.8
       objectReference: {fileID: 0}
     - target: {fileID: 2451390698564265359, guid: 694184a1425d98f47af7890fbbf1fc12, type: 3}
       propertyPath: m_Size.y
-      value: 0.1
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2451390698564265359, guid: 694184a1425d98f47af7890fbbf1fc12, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2451390698564265359, guid: 694184a1425d98f47af7890fbbf1fc12, type: 3}
+      propertyPath: m_Offset.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2451390698564265393, guid: 694184a1425d98f47af7890fbbf1fc12, type: 3}
       propertyPath: m_RootOrder
@@ -2941,13 +2993,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: leaf (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 2451390698564265357, guid: 694184a1425d98f47af7890fbbf1fc12, type: 3}
+      propertyPath: m_SurfaceArc
+      value: 150
+      objectReference: {fileID: 0}
     - target: {fileID: 2451390698564265359, guid: 694184a1425d98f47af7890fbbf1fc12, type: 3}
       propertyPath: m_Size.x
-      value: 3
+      value: 2.8
       objectReference: {fileID: 0}
     - target: {fileID: 2451390698564265359, guid: 694184a1425d98f47af7890fbbf1fc12, type: 3}
       propertyPath: m_Size.y
-      value: 0.1
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2451390698564265359, guid: 694184a1425d98f47af7890fbbf1fc12, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2451390698564265359, guid: 694184a1425d98f47af7890fbbf1fc12, type: 3}
+      propertyPath: m_Offset.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2451390698564265393, guid: 694184a1425d98f47af7890fbbf1fc12, type: 3}
       propertyPath: m_RootOrder
@@ -3174,13 +3238,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: leaf (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 2451390698564265357, guid: 694184a1425d98f47af7890fbbf1fc12, type: 3}
+      propertyPath: m_SurfaceArc
+      value: 150
+      objectReference: {fileID: 0}
     - target: {fileID: 2451390698564265359, guid: 694184a1425d98f47af7890fbbf1fc12, type: 3}
       propertyPath: m_Size.x
-      value: 3
+      value: 2.8
       objectReference: {fileID: 0}
     - target: {fileID: 2451390698564265359, guid: 694184a1425d98f47af7890fbbf1fc12, type: 3}
       propertyPath: m_Size.y
-      value: 0.1
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2451390698564265359, guid: 694184a1425d98f47af7890fbbf1fc12, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2451390698564265359, guid: 694184a1425d98f47af7890fbbf1fc12, type: 3}
+      propertyPath: m_Offset.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2451390698564265393, guid: 694184a1425d98f47af7890fbbf1fc12, type: 3}
       propertyPath: m_RootOrder
@@ -3566,8 +3642,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playButton: {fileID: 516683718}
-  soundButton: {fileID: 0}
-  etiketButton: {fileID: 0}
+  soundButton: {fileID: 378386468}
+  etiketButton: {fileID: 2078984672}
   score: {fileID: 648921775}
   lastScore: {fileID: 1263278116}
   backgroundAnim: {fileID: 2085509262}
@@ -3597,13 +3673,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: leaf (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 2451390698564265357, guid: 694184a1425d98f47af7890fbbf1fc12, type: 3}
+      propertyPath: m_SurfaceArc
+      value: 150
+      objectReference: {fileID: 0}
     - target: {fileID: 2451390698564265359, guid: 694184a1425d98f47af7890fbbf1fc12, type: 3}
       propertyPath: m_Size.x
-      value: 3
+      value: 2.8
       objectReference: {fileID: 0}
     - target: {fileID: 2451390698564265359, guid: 694184a1425d98f47af7890fbbf1fc12, type: 3}
       propertyPath: m_Size.y
-      value: 0.1
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2451390698564265359, guid: 694184a1425d98f47af7890fbbf1fc12, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2451390698564265359, guid: 694184a1425d98f47af7890fbbf1fc12, type: 3}
+      propertyPath: m_Offset.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2451390698564265393, guid: 694184a1425d98f47af7890fbbf1fc12, type: 3}
       propertyPath: m_RootOrder
@@ -3914,13 +4002,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: leaf (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 2451390698564265357, guid: 694184a1425d98f47af7890fbbf1fc12, type: 3}
+      propertyPath: m_SurfaceArc
+      value: 150
+      objectReference: {fileID: 0}
     - target: {fileID: 2451390698564265359, guid: 694184a1425d98f47af7890fbbf1fc12, type: 3}
       propertyPath: m_Size.x
-      value: 3
+      value: 2.8
       objectReference: {fileID: 0}
     - target: {fileID: 2451390698564265359, guid: 694184a1425d98f47af7890fbbf1fc12, type: 3}
       propertyPath: m_Size.y
-      value: 0.1
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2451390698564265359, guid: 694184a1425d98f47af7890fbbf1fc12, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2451390698564265359, guid: 694184a1425d98f47af7890fbbf1fc12, type: 3}
+      propertyPath: m_Offset.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2451390698564265393, guid: 694184a1425d98f47af7890fbbf1fc12, type: 3}
       propertyPath: m_RootOrder
@@ -5303,6 +5403,26 @@ PrefabInstance:
     - target: {fileID: 2451390698564265354, guid: 694184a1425d98f47af7890fbbf1fc12, type: 3}
       propertyPath: m_Name
       value: leaf
+      objectReference: {fileID: 0}
+    - target: {fileID: 2451390698564265357, guid: 694184a1425d98f47af7890fbbf1fc12, type: 3}
+      propertyPath: m_SurfaceArc
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 2451390698564265359, guid: 694184a1425d98f47af7890fbbf1fc12, type: 3}
+      propertyPath: m_Size.x
+      value: 2.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2451390698564265359, guid: 694184a1425d98f47af7890fbbf1fc12, type: 3}
+      propertyPath: m_Size.y
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2451390698564265359, guid: 694184a1425d98f47af7890fbbf1fc12, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2451390698564265359, guid: 694184a1425d98f47af7890fbbf1fc12, type: 3}
+      propertyPath: m_Offset.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2451390698564265359, guid: 694184a1425d98f47af7890fbbf1fc12, type: 3}
       propertyPath: m_EdgeRadius
