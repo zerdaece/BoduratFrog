@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 771b3f46f717b8b43896196fa1bb4356
+guid: 25d07b19b326ad541ab554a7c3fcebf7
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -42,7 +42,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -126,7 +126,70 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: ladybug_anim_0
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 15
+        width: 127
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e19afc327f2acb47ac4c0395c6cdeb7
+      internalID: -1394652951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ladybug_anim_1
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 29
+        width: 68
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6341c9091212f15489d2b6b5269b642a
+      internalID: 1386622829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ladybug_anim_2
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 36
+        width: 67
+        height: 60
+      alignment: 9
+      pivot: {x: 0.06700225, y: 0.07385216}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba76e2dad87669a46b76f1fc0bac23a3
+      internalID: 1340633260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -137,7 +200,10 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      ladybug_anim_1: 1386622829
+      ladybug_anim_2: 1340633260
+      ladybug_anim_0: -1394652951
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
