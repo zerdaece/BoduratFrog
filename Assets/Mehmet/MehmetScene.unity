@@ -1502,7 +1502,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f8247fad437aac4b9f5e83283ada6c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 2123985198}
+  player: {fileID: 1710251931}
 --- !u!1 &577832221
 GameObject:
   m_ObjectHideFlags: 0
@@ -3548,7 +3548,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 519420031}
-  player: {fileID: 2123985198}
+  player: {fileID: 1710251931}
   gameOver: 0
   retry: {fileID: 0}
   quit: {fileID: 0}
