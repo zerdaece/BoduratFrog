@@ -49,6 +49,7 @@ public class starSpawner : MonoBehaviour
             // Apply a force to the star depending on the spawn side
             if (spawnArea == leftside)
             {
+                newStar.transform.Rotate(0, 180, 0);
                 rb.AddForce(Vector2.right * 10, ForceMode2D.Impulse);
             }
             else if (spawnArea == rightside)
