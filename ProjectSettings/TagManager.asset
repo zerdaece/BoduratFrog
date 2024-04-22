@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Zemin
   - platform
+  - Background
   layers:
   - Default
   - TransparentFX

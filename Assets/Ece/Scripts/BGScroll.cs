@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BGScroll : MonoBehaviour
 {
+    ///Adı backgroundscroll fakat bu kod bulut için var
     public float speed = 0.5f;
     private Vector3 startPos;
     // Start is called before the first frame update
