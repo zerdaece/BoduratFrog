@@ -50,11 +50,11 @@ public class starSpawner : MonoBehaviour
             if (spawnArea == leftside)
             {
                 newStar.transform.Rotate(0, 180, 0);
-                rb.AddForce(Vector2.right * 10, ForceMode2D.Impulse);
+                rb.AddForce(Vector2.right * 5, ForceMode2D.Impulse);
             }
             else if (spawnArea == rightside)
             {
-                rb.AddForce(Vector2.left * 10, ForceMode2D.Impulse);
+                rb.AddForce(Vector2.left * 5, ForceMode2D.Impulse);
             }
             // Wait for 3 seconds before destroying the newStar object
             yield return new WaitForSeconds(3f);
