@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 public class JumpMovement : MonoBehaviour
 {
+    private Animator animator;
     public float jumpForce = 3f; // the upward force applied when jumping
     public float fallMultiplier = 2.5f; // the multiplier applied to the falling gravity
     public float lowJumpMultiplier = 2f; // the multiplier applied to the low jumping gravity
@@ -51,6 +52,7 @@ public class JumpMovement : MonoBehaviour
             // apply upward force to jump
             rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
             isGrounded = false;
+            animator.SetTrigger("Jump");
         }
         else
         {
@@ -72,6 +74,7 @@ public class JumpMovement : MonoBehaviour
         if (collision.contacts[0].normal.y > 0.7f)
         {
             isGrounded = true;
+            
         }
     }
 }
