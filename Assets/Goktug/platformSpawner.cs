@@ -7,6 +7,7 @@ public class platformSpawner : MonoBehaviour
 {
     public GameObject Platforms;
     public GameObject platform;
+    public GameObject movablePlatform;
     public BoxCollider2D spawnArea;
     public int platformNumber;
     public int minNumber;
@@ -57,9 +58,3 @@ public class platformSpawner : MonoBehaviour
 
     }
 }
-               
-            
-            
-
-
-
