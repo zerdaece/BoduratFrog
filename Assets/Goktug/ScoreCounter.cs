@@ -8,13 +8,18 @@ public class ScoreCounter : MonoBehaviour
 
     public GameObject Player;
     public int Score = 0;
+    public Text HighScoreText;
+    
     public Text scoreText;
     public GameObject scoree_ui;
+    
     
     void Awake()
     {
         Player = GameObject.FindGameObjectWithTag("Player");
         transform.position = Player.transform.position;
+        HighScoreText.text= PlayerPrefs.GetInt("HighScore", 0).ToString("HighScore: "+Score.ToString());
+       
     }
 
     // Update is called once per frame
@@ -28,9 +33,15 @@ public class ScoreCounter : MonoBehaviour
             if (other.GetComponent<platform>().counted == false)
             {  
                 scoree_ui.SetActive(true);
-                scoreText.text =  Score.ToString();
-                Score++;
                 
+                Score++;
+                scoreText.text =  Score.ToString();
+               
+                if(Score > PlayerPrefs.GetInt("HighScore", 0))
+                {
+                    PlayerPrefs.SetInt("HighScore", Score);
+                    HighScoreText.text = Score.ToString("HighScore: "+Score.ToString());
+                }
                 other.GetComponent<platform>().counted = true;
                
             }

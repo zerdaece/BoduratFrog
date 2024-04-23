@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
   public GameObject score;
   public GameObject lastScore;
   public GameObject backgroundAnim;
+  public GameObject highScore;
 
 
   private void Awake()
@@ -23,6 +24,7 @@ public class GameManager : MonoBehaviour
     soundButton.SetActive(true);
     etiketButton.SetActive(true);
     score.SetActive(true);
+    highScore.SetActive(true);
     // cam.transform.position = new Vector3(0, 3,-1);
 
   }
@@ -42,6 +44,7 @@ public class GameManager : MonoBehaviour
     score.SetActive(true);
     soundButton.SetActive(true);
     etiketButton.SetActive(true);
+    highScore.SetActive(false);
     //lastScore.SetActive(false);
   }
   public void Retry()
