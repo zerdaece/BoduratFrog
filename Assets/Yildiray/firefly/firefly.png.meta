@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a38159ff64fbbae4f845f50a35c455b1
+guid: 0a7de6f99a7e06d4fb093046a6b04677
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -131,10 +131,10 @@ TextureImporter:
       name: firefly_0
       rect:
         serializedVersion: 2
-        x: 8
-        y: 17
-        width: 92
-        height: 86
+        x: 12
+        y: 42
+        width: 97
+        height: 61
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -142,8 +142,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a4a39d1f60d7964458940d4108b5f0d3
-      internalID: 98145213
+      spriteID: 1a292deb7ff793346aa80cbeee25d6d6
+      internalID: -689407158
       vertices: []
       indices: 
       edges: []
@@ -152,19 +152,19 @@ TextureImporter:
       name: firefly_1
       rect:
         serializedVersion: 2
-        x: 151
-        y: 84
-        width: 61
-        height: 34
-      alignment: 9
-      pivot: {x: 0.06501445, y: 0.6284229}
+        x: 144
+        y: 17
+        width: 59
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 76a6abd0df9777549b708c4bf0726c07
-      internalID: -1959568572
+      spriteID: 501b4aed970d7e643a09806fa7b3fd84
+      internalID: 2062580037
       vertices: []
       indices: 
       edges: []
@@ -173,19 +173,19 @@ TextureImporter:
       name: firefly_2
       rect:
         serializedVersion: 2
-        x: 142
-        y: 5
-        width: 68
-        height: 54
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 246
+        y: 54
+        width: 61
+        height: 34
+      alignment: 9
+      pivot: {x: 0.080837816, y: 0.57231003}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 207cb808629edfc4abdfd17d047f5912
-      internalID: -467837826
+      spriteID: 9a0313ca0e4da2c4ebd3a3e1e95d2d75
+      internalID: 1895675677
       vertices: []
       indices: 
       edges: []
@@ -201,9 +201,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      firefly_1: -1959568572
-      firefly_2: -467837826
-      firefly_0: 98145213
+      firefly_1: 2062580037
+      firefly_2: 1895675677
+      firefly_0: -689407158
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
