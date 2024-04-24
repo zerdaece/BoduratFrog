@@ -9,7 +9,7 @@ public class ScoreCounter : MonoBehaviour
     public GameObject Player;
     public int Score = 0;
     public Text HighScoreText;
-    
+    public Text LastScoreText;
     public Text scoreText;
     public GameObject scoree_ui;
     
@@ -19,7 +19,8 @@ public class ScoreCounter : MonoBehaviour
         Player = GameObject.FindGameObjectWithTag("Player");
         transform.position = Player.transform.position;
         HighScoreText.text= PlayerPrefs.GetInt("HighScore", 0).ToString("HighScore: "+Score.ToString());
-       
+        LastScoreText.text= PlayerPrefs.GetInt("LastScore", 0).ToString("LastScore: "+Score.ToString());
+
     }
 
     // Update is called once per frame
@@ -35,6 +36,8 @@ public class ScoreCounter : MonoBehaviour
                 scoree_ui.SetActive(true);
                 
                 Score++;
+                PlayerPrefs.SetInt("LastScore", Score);
+                LastScoreText.text= Score.ToString("LastScore: "+Score.ToString());
                 scoreText.text =  Score.ToString();
                
                 if(Score > PlayerPrefs.GetInt("HighScore", 0))
