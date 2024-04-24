@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
   public GameObject backgroundAnim;
   public GameObject highScore;
 
+public GameObject Logo;
 
   private void Awake()
   {
@@ -25,16 +26,10 @@ public class GameManager : MonoBehaviour
     etiketButton.SetActive(true);
     score.SetActive(true);
     highScore.SetActive(true);
-    // cam.transform.position = new Vector3(0, 3,-1);
-
+    
   }
 
-  /*public void Pause()
-  {
-    Time.timeScale = 0;
-    score.SetActive(true);
-    //lastScore.SetActive(true);
-  }*/
+
 
   // Update is called once per frame
   public void Play()
@@ -45,7 +40,7 @@ public class GameManager : MonoBehaviour
     soundButton.SetActive(true);
     etiketButton.SetActive(true);
     highScore.SetActive(false);
-    //lastScore.SetActive(false);
+    Logo.SetActive(false);
   }
   public void Retry()
   {
@@ -53,21 +48,20 @@ public class GameManager : MonoBehaviour
     //backgroundAnim.SetActive(true);
     //Invoke(nameof(PlayAnim), 1.4f);
     SceneManager.LoadScene(0);
-    //lastScore.SetActive(true);
-    score.SetActive(true);
+    //Logo.SetActive(false);
+    //score.SetActive(true);
   }
   /*private void PlayAnim()
   {
 
-
     SceneManager.LoadScene(0);
-    lastScore.SetActive(true);
+    
   }*/
 
-  public void Quit()
+  /*public void Quit()
   {
     Application.Quit();
 
-  }
+  }*/
 
 }
