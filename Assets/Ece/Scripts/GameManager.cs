@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
   public GameObject lastScore;
   public GameObject backgroundAnim;
   public GameObject highScore;
-  public GameObject Logo;
+  public GameObject Logobutton;
 
   private void Awake()
   {
@@ -39,7 +39,7 @@ public class GameManager : MonoBehaviour
     etiketButton.SetActive(true);
     highScore.SetActive(false);
     lastScore.SetActive(false);
-    Logo.SetActive(false);
+    Logobutton.SetActive(false);
   }
   public void Retry()
   {
