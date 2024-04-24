@@ -47,7 +47,7 @@ public class platformSpawner : MonoBehaviour
             {
                 float platformHeight = newPlatform.GetComponent<SpriteRenderer>().bounds.size.y; // Yeni platformun yüksekliği
                 float lastPlatformY = lastPlatform.transform.position.y; // Önceki platformun y eksenindeki pozisyonu
-                newPlatform.transform.position = new Vector2(newPlatform.transform.position.x, lastPlatformY + platformHeight + 1.2f);
+                newPlatform.transform.position = new Vector2(newPlatform.transform.position.x, lastPlatformY + platformHeight + 1.5f);
             }
 
             // Yeni platformu önceki platform olarak ata
