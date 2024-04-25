@@ -17,6 +17,7 @@ public class JumpMovement : MonoBehaviour
     
     void Start()
     {
+        animator = gameObject.GetComponent<Animator>();
         ScoreCounter = GameObject.Find("ScoreCounter");
         // get the character's rigidbody component
         rb = GetComponent<Rigidbody2D>();
