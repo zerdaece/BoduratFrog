@@ -7,7 +7,7 @@ public class platformSpawner : MonoBehaviour
 {
     public GameObject Platforms;
     public GameObject platform;
-    //public GameObject movablePlatform;
+    public GameObject movablePlatform;
     public BoxCollider2D spawnArea;
     public int platformNumber;
     public int minNumber;
@@ -35,7 +35,7 @@ public class platformSpawner : MonoBehaviour
             Vector2 randomPosition;
 
             // Generate random position within the spawn area
-            int randomNumber = Random.Range(1, 7);
+           
             randomPosition = new Vector2(Random.Range(min.x, max.x), spawnArea.bounds.center.y);
 
 
@@ -43,18 +43,16 @@ public class platformSpawner : MonoBehaviour
             GameObject newPlatform = Instantiate(platform, randomPosition, Quaternion.identity);
             newPlatform.transform.parent = Platforms.transform;
             platformNumber++;
-            if (randomNumber < 2)
-            {
-                newPlatform.GetComponentInChildren<MovablePlatform>().enabled = true;
-            }
             if (lastPlatform != null)
             {
-                Debug.Log("girdi");
+                int randomNumber = Random.Range(1, 7);
                 float platformHeight = newPlatform.GetComponent<SpriteRenderer>().bounds.size.y; // Yeni platformun yüksekliği
                 float lastPlatformY = lastPlatform.transform.position.y; // Önceki platformun y eksenindeki pozisyonu
                 newPlatform.transform.position = new Vector2(newPlatform.transform.position.x, lastPlatformY + platformHeight + 1.5f);
-
-
+                if(randomNumber < 2)
+                {
+                    newPlatform.GetComponent<MovablePlatform>().enabled = true;
+                }
             }
 
             // Yeni platformu önceki platform olarak ata
