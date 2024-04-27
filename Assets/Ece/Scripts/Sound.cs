@@ -9,12 +9,13 @@ public class Sound : MonoBehaviour
     public Sprite soundOff;
     public Button button;
     private bool isOn = true;
-    //public AudioSource audioSource;
+    public AudioSource audioSource;
 
     // Start is called before the first frame update
     void Start()
     {
         soundOn = button.image.sprite;
+        audioSource.mute = false;
     }
 
     // Update is called once per frame
@@ -28,13 +29,13 @@ public class Sound : MonoBehaviour
         {
             button.image.sprite = soundOff;
             isOn = false;
-            //audioSource.mute = true;
+            audioSource.mute = true;
         }
         else
         {
             button.image.sprite = soundOn;
             isOn = true;
-            //audioSource.mute = false;
+            audioSource.mute = false;
         }
     }
 }

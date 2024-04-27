@@ -12,6 +12,7 @@ public class deadZone : MonoBehaviour
     public GameObject player;
     public bool gameOver;
     public GameManager gameManager;
+    public AudioSource deadSound;
     [SerializeField] Vector3 deadzonepos = new Vector3(0, 0, 0);
 
     public static bool alive;
@@ -32,14 +33,19 @@ public class deadZone : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            Time.timeScale = 0f;
+            deadSound.Play();
             gameOver = true;
             Debug.Log("ÖLDÜN");
-            gameManager.Retry();
             alive = false;
+            Invoke("CallRetry", 1f);
             CoinSystem.UpdateCoinCount(scoreCounter.Score);
             print(CoinSystem.coin);
         }
+    }
+
+    public void CallRetry()
+    {
+        gameManager.Retry();
     }
 
 

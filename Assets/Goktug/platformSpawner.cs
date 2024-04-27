@@ -11,7 +11,7 @@ public class platformSpawner : MonoBehaviour
     public BoxCollider2D spawnArea;
     public int platformNumber;
     public int minNumber;
-    public float speed;
+    //public float speed;
     private GameObject lastPlatform;
 
 
@@ -45,14 +45,9 @@ public class platformSpawner : MonoBehaviour
             platformNumber++;
             if (lastPlatform != null)
             {
-                int randomNumber = Random.Range(1, 7);
                 float platformHeight = newPlatform.GetComponent<SpriteRenderer>().bounds.size.y; // Yeni platformun yüksekliği
                 float lastPlatformY = lastPlatform.transform.position.y; // Önceki platformun y eksenindeki pozisyonu
                 newPlatform.transform.position = new Vector2(newPlatform.transform.position.x, lastPlatformY + platformHeight + 1.5f);
-                if(randomNumber < 2)
-                {
-                    newPlatform.GetComponent<MovablePlatform>().enabled = true;
-                }
             }
 
             // Yeni platformu önceki platform olarak ata
