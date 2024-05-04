@@ -1586,7 +1586,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 8ddc3263f55a90d468db0955686b15db, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -2424,11 +2424,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 694184a1425d98f47af7890fbbf1fc12, type: 3}
---- !u!1 &796096027 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2451390698564265354, guid: 694184a1425d98f47af7890fbbf1fc12, type: 3}
-  m_PrefabInstance: {fileID: 2451390698250687377}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &796096032 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2451390698564265393, guid: 694184a1425d98f47af7890fbbf1fc12, type: 3}
@@ -2700,9 +2695,10 @@ GameObject:
   - component: {fileID: 831928016}
   - component: {fileID: 831928015}
   - component: {fileID: 831928014}
+  - component: {fileID: 831928018}
   m_Layer: 0
   m_Name: leaf_rework
-  m_TagString: Untagged
+  m_TagString: Zemin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2781,7 +2777,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 831928011}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5d68fb152fbd02e4d8f1bddde5b16ce7, type: 3}
   m_Name: 
@@ -2802,7 +2798,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 1
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0059159994, y: 0.032846224}
+  m_Offset: {x: -0.002750218, y: 0.033818856}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -2813,7 +2809,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.66043377, y: 0.04781171}
+  m_Size: {x: 0.67636776, y: 0.059816286}
   m_EdgeRadius: 0
 --- !u!50 &831928016
 Rigidbody2D:
@@ -2829,13 +2825,13 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_AngularDrag: 0
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 6
 --- !u!251 &831928017
 PlatformEffector2D:
   m_ObjectHideFlags: 0
@@ -2851,10 +2847,23 @@ PlatformEffector2D:
   m_RotationalOffset: 0
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
-  m_SurfaceArc: 180
+  m_SurfaceArc: 150
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
+--- !u!114 &831928018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 831928011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62da6fe4a82c62f4bb63afa8b2023e3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  counted: 0
 --- !u!1 &841620001
 GameObject:
   m_ObjectHideFlags: 0
@@ -3132,15 +3141,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 363195248836968120, guid: 0e2814d0cfb671446bb30c9b71300c42, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 363195248836968120, guid: 0e2814d0cfb671446bb30c9b71300c42, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 363195248836968120, guid: 0e2814d0cfb671446bb30c9b71300c42, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 363195248836968120, guid: 0e2814d0cfb671446bb30c9b71300c42, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3200,12 +3209,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Platforms: {fileID: 383904915}
-  platform: {fileID: 796096027}
+  platform: {fileID: 1464407276}
   movablePlatform: {fileID: 1464407276}
   spawnArea: {fileID: 885186726}
   platformNumber: 9
   minNumber: 8
-  speed: 0.2
 --- !u!1 &894329819
 GameObject:
   m_ObjectHideFlags: 0
@@ -4190,7 +4198,7 @@ GameObject:
   - component: {fileID: 1464407277}
   m_Layer: 0
   m_Name: Movable Platform
-  m_TagString: Untagged
+  m_TagString: Zemin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -23,8 +23,5 @@ public class MovablePlatform : MonoBehaviour
           targetPos= posA.position;
         transform.position = Vector2.MoveTowards(transform.position, targetPos, speed * Time.deltaTime);  
     }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        transform.position = Vector2.MoveTowards(transform.position, targetPos, speed * Time.deltaTime);
-    }
+    
 }

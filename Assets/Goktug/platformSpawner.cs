@@ -11,7 +11,6 @@ public class platformSpawner : MonoBehaviour
     public BoxCollider2D spawnArea;
     public int platformNumber;
     public int minNumber;
-    //public float speed;
     private GameObject lastPlatform;
 
 
@@ -37,12 +36,18 @@ public class platformSpawner : MonoBehaviour
             // Generate random position within the spawn area
            
             randomPosition = new Vector2(Random.Range(min.x, max.x), spawnArea.bounds.center.y);
-
+            int randomNumber = Random.Range(1, 7);
+            Debug.Log("platformNumber"+randomNumber);
 
             // Spawn the platform at the random position
             GameObject newPlatform = Instantiate(platform, randomPosition, Quaternion.identity);
             newPlatform.transform.parent = Platforms.transform;
             platformNumber++;
+             if (randomNumber < 2)
+            {
+                newPlatform.GetComponentInChildren<MovablePlatform>().enabled = true;
+                Debug.Log("çalışür mü?");
+            }
             if (lastPlatform != null)
             {
                 float platformHeight = newPlatform.GetComponent<SpriteRenderer>().bounds.size.y; // Yeni platformun yüksekliği
