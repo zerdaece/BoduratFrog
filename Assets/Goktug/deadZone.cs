@@ -20,6 +20,7 @@ public class deadZone : MonoBehaviour
     {
         ScoreCounter = GameObject.Find("ScoreCounter");
         scoreCounter = ScoreCounter.GetComponent<ScoreCounter>();
+        deadSound = GetComponent<AudioSource>();
     }
     private void Update()
     {
@@ -47,6 +48,5 @@ public class deadZone : MonoBehaviour
     {
         gameManager.Retry();
     }
-
 
 }//10 numaara kod yazmışın kral
