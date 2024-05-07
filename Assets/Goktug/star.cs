@@ -7,13 +7,13 @@ public class star : MonoBehaviour
 {
     private GameObject ScoreCounter;
     private ScoreCounter scoreCounter;
-    public Text addfivescore;
+    //public Text addfivescore;
     // Start is called before the first frame update
     void Start()
     {
         ScoreCounter = GameObject.Find("ScoreCounter");
         scoreCounter = ScoreCounter.GetComponent<ScoreCounter>();
-        addfivescore = addfivescore.GetComponent<Text>();
+        
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -22,14 +22,10 @@ public class star : MonoBehaviour
         {
             scoreCounter.Score += 5;
             
-            addfivescore.text = "+5";
-            Invoke("DestroyAddFiveScore", 1f);
+          
             Destroy(gameObject);
         }
 
     }
-    void DestroyAddFiveScore()
-    {
-        addfivescore.text = " ";
-    }
+    
 }
