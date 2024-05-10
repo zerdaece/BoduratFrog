@@ -46,13 +46,14 @@ public class platformSpawner : MonoBehaviour
              if (randomNumber < 2)
             {
                 newPlatform.GetComponentInChildren<MovablePlatform>().enabled = true;
-                Debug.Log("çalışür mü?");
+                Debug.Log("çalişür mü?");
             }
             if (lastPlatform != null)
             {
-                float platformHeight = newPlatform.GetComponent<SpriteRenderer>().bounds.size.y; // Yeni platformun yüksekliği
+                float platformHeight = newPlatform.GetComponentInChildren<SpriteRenderer>().bounds.size.y; // Yeni platformun yüksekliği
                 float lastPlatformY = lastPlatform.transform.position.y; // Önceki platformun y eksenindeki pozisyonu
-                newPlatform.transform.position = new Vector2(newPlatform.transform.position.x, lastPlatformY + platformHeight + 1.5f);
+                newPlatform.transform.position = new Vector2(newPlatform.transform.position.x, lastPlatformY + platformHeight + 1.2f);
+                Debug.Log("böh");
             }
 
             // Yeni platformu önceki platform olarak ata

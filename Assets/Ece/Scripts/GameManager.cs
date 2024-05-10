@@ -13,12 +13,17 @@ public class GameManager : MonoBehaviour
   public GameObject etiketButton;
   public GameObject score;
   public GameObject lastScore;
-  public GameObject backgroundAnim;
   public GameObject highScore;
   public GameObject Logobutton;
+  public Animator fingeranimator;
+  public GameObject finger;
+  
+  
+
 
   private void Awake()
   {
+    finger.SetActive(false);
     Time.timeScale = 0;
     soundButton.SetActive(true);
     etiketButton.SetActive(true);
@@ -33,6 +38,10 @@ public class GameManager : MonoBehaviour
   public void Play()
   {
     Time.timeScale = 1;
+    finger.SetActive(true);
+    Invoke("FingerAnimFinish", 3f);
+  
+    
     playButton.SetActive(false);
     score.SetActive(true);
     soundButton.SetActive(true);
@@ -40,13 +49,23 @@ public class GameManager : MonoBehaviour
     highScore.SetActive(false);
     lastScore.SetActive(false);
     Logobutton.SetActive(false);
+    
   }
   public void Retry()
   {
     Time.timeScale = 1;
     SceneManager.LoadScene(0);
   }
-
+   private void FingerAnim()
+   {
+    
+    fingeranimator.enabled = true;
+   }
+   private void FingerAnimFinish()
+   {
+    fingeranimator.enabled= false;
+    Destroy(finger);
+   }
 
 
 }
