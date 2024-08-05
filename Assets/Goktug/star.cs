@@ -7,12 +7,14 @@ public class star : MonoBehaviour
 {
     private GameObject ScoreCounter;
     private ScoreCounter scoreCounter;
+   
     //public Text addfivescore;
     // Start is called before the first frame update
     void Start()
     {
         ScoreCounter = GameObject.Find("ScoreCounter");
         scoreCounter = ScoreCounter.GetComponent<ScoreCounter>();
+        
         
     }
 
