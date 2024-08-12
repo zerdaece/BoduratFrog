@@ -32,14 +32,27 @@ public class JumpMovement : MonoBehaviour
         /*float moveHorizontal = Input.GetAxis("Horizontal");
         rb.velocity = new Vector2(moveHorizontal * 5f, rb.velocity.y);*/
         
-        if(Input.touchCount > 0)
+        /*if(Input.touchCount > 0)
         {
             Touch touch = Input.GetTouch(0);
             if(touch.phase == TouchPhase.Moved)
             {
-                rb.velocity = new Vector2(touch.deltaPosition.x /5.5f, rb.velocity.y);
+                rb.velocity = new Vector2(touch.deltaPosition.x /4f, rb.velocity.y);
             }
+        }*/
+
+        if (Input.touchCount > 0)
+    {
+        Touch touch = Input.GetTouch(0);
+        if (touch.phase == TouchPhase.Moved)
+        {
+            // Dokunma girişini ekran genişliğine göre normalize ediyoruz
+            float normalizedDeltaX = touch.deltaPosition.x / Screen.width;
+            
+            // Bu değeri kullanarak karakterin hızını ayarlıyoruz
+            rb.velocity = new Vector2(normalizedDeltaX * 150f, rb.velocity.y);
         }
+    }
 
         // Update maxYValue if player's Y position exceeds the previous maximum value
         if (transform.position.y > maxYValue)
@@ -62,7 +75,7 @@ public class JumpMovement : MonoBehaviour
             {
                 rb.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
             }
-            else if (rb.velocity.y > 0 && rb.velocity.y < 5f)
+            else if (rb.velocity.y > 0 && rb.velocity.y < 4f)
             {
                 rb.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
             }
