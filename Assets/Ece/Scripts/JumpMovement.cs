@@ -50,7 +50,7 @@ public class JumpMovement : MonoBehaviour
             float normalizedDeltaX = touch.deltaPosition.x / Screen.width;
             
             // Bu değeri kullanarak karakterin hızını ayarlıyoruz
-            rb.velocity = new Vector2(normalizedDeltaX * 150f, rb.velocity.y);
+            rb.linearVelocity = new Vector2(normalizedDeltaX * 150f, rb.linearVelocity.y);
         }
     }
 
@@ -71,13 +71,13 @@ public class JumpMovement : MonoBehaviour
         else
         {
             // apply falling gravity
-            if (rb.velocity.y < 0)
+            if (rb.linearVelocity.y < 0)
             {
-                rb.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
+                rb.linearVelocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
             }
-            else if (rb.velocity.y > 0 && rb.velocity.y < 4f)
+            else if (rb.linearVelocity.y > 0 && rb.linearVelocity.y < 4f)
             {
-                rb.velocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
+                rb.linearVelocity += Vector2.up * Physics2D.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
             }
         }
     }

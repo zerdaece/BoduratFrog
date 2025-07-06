@@ -23,9 +23,7 @@ public class star : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             scoreCounter.Score += 5;
-            
-          
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
 
     }
