@@ -3,34 +3,43 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
+[System.Serializable]
+public class Object
+{
+    public float minSpawnInterval = 1f;
+    public float maxSpawnInterval = 3f;
+    public float Speed = 5f;
+    public GameObject objectobject;
+    public List<GameObject> objectList;
+    public GameObject objectContainer;
+}
 public class starSpawner : MonoBehaviour
 {
 
     public Camera cam;
-    [SerializeField] GameObject StarObject;
-    [SerializeField] GameObject StarContainer;
-    [SerializeField] GameObject ObstacleObject;
-    [SerializeField] GameObject ObstacleContainer;
+    [SerializeField] Object StarObject;
+    [SerializeField] Object ObstacleObject;
     [SerializeField] BoxCollider2D leftside;
     [SerializeField] BoxCollider2D rightside;
-    public float minSpawnInterval = 1f;
-    public float maxSpawnInterval = 3f;
-    [SerializeField] private float starSpeed = 5f; // Speed of the stars
 
-    [SerializeField] List<GameObject> StarList;
-
-
-    [SerializeField] List<GameObject> ObstacleList;
     private Vector3 spawnerpos = new Vector3(0, 0, 0);//ehm bunu ben ekledim :p -goktug
                                                       // Start is called before the first frame update
 
     void Start()
     {
-        StartCoroutine(SpawnStar(leftside));
-        StartCoroutine(SpawnStar(rightside));
         spawnerpos.y = cam.transform.position.y;
 
+        if (StarObject != null && StarObject.objectobject != null)
+        {
+            StartCoroutine(SpawnLoop(leftside, StarObject));
+            StartCoroutine(SpawnLoop(rightside, StarObject));
+        }
 
+        if (ObstacleObject != null && ObstacleObject.objectobject != null)
+        {
+            StartCoroutine(SpawnLoop(leftside, ObstacleObject));
+            StartCoroutine(SpawnLoop(rightside, ObstacleObject));
+        }
     }
 
     // Update is called once per frame
@@ -42,60 +51,65 @@ public class starSpawner : MonoBehaviour
         }
         Vector3 newPosition = new Vector3(transform.position.x, spawnerpos.y, transform.position.z);
         transform.position = newPosition;
-
     }
-    private IEnumerator SpawnStar(BoxCollider2D spawnArea)
-    {
-        while (true)
-        {
 
+    private IEnumerator SpawnLoop(BoxCollider2D spawnArea, Object objectToSpawn)
+    {
+        while (true) // This loop will run forever
+        {
             // Wait for a random amount of time before spawning the next object
-            yield return new WaitForSeconds(Random.Range(minSpawnInterval, maxSpawnInterval));
+            float waitTime = Random.Range(objectToSpawn.minSpawnInterval, objectToSpawn.maxSpawnInterval);
+            yield return new WaitForSeconds(waitTime);
 
             // Calculate random position within the spawn area
             Vector2 randomPosition = GetRandomPositionInBounds(spawnArea.bounds);
-            // Check if there's an inactive star in the pool
-            GameObject newStar = StarList.Find(star => !star.activeInHierarchy);
+            // Check if there's an inactive object in the pool
+            GameObject newObject = objectToSpawn.objectList.Find(obj => !obj.activeInHierarchy);
 
-            if (newStar == null)
+            if (newObject == null)
             {
-                // If no inactive star is available, instantiate a new one and add it to the pool
-                newStar = Instantiate(StarObject, randomPosition, Quaternion.identity);
-                newStar.transform.SetParent(StarContainer.transform);
-                newStar.name = "Star_" + StarList.Count;
-                StarList.Add(newStar);
+                // If no inactive object is available, instantiate a new one and add it to the pool
+                newObject = Instantiate(objectToSpawn.objectobject, randomPosition, Quaternion.identity);
+                newObject.transform.SetParent(objectToSpawn.objectContainer.transform);
+                newObject.name = objectToSpawn.objectobject.name + objectToSpawn.objectList.Count;
+                objectToSpawn.objectList.Add(newObject);
             }
             else
             {
-                // Reuse the inactive star
-                newStar.transform.position = randomPosition;
-                newStar.transform.rotation = Quaternion.identity;
-                newStar.SetActive(true);
+                // Reuse the inactive object
+                newObject.transform.position = randomPosition;
+                newObject.transform.rotation = Quaternion.identity;
+                newObject.SetActive(true);
             }
 
-            // Get the Rigidbody2D component of the star
-            Rigidbody2D rb = newStar.GetComponent<Rigidbody2D>();
+            // Get the Rigidbody2D component of the object
+            Rigidbody2D rb = newObject.GetComponent<Rigidbody2D>();
 
-            // Apply a force to the star depending on the spawn side
+            // Apply a force to the object depending on the spawn side
             if (spawnArea == leftside)
             {
-
-                newStar.transform.Rotate(0, 180, 0);
-                rb.AddForce(Vector2.right * starSpeed, ForceMode2D.Impulse);
-
+                newObject.transform.Rotate(0, 180, 0);
+                rb.AddForce(Vector2.right * objectToSpawn.Speed, ForceMode2D.Impulse);
             }
             else if (spawnArea == rightside)
             {
-
-                rb.AddForce(Vector2.left * starSpeed, ForceMode2D.Impulse);
-
+                rb.AddForce(Vector2.left * objectToSpawn.Speed, ForceMode2D.Impulse);
             }
-            yield return new WaitForSeconds(8f);
-            // Destroy the newStar object after 3 seconds
-            newStar.SetActive(false);
 
+            // Deactivate the object after a delay
+            StartCoroutine(DisableAfterTime(newObject, 8f));
         }
     }
+
+    private IEnumerator DisableAfterTime(GameObject objectToDisable, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        if (objectToDisable != null)
+        {
+            objectToDisable.SetActive(false);
+        }
+    }
+
     private Vector2 GetRandomPositionInBounds(Bounds bounds)
     {
         float randomX = Random.Range(bounds.min.x, bounds.max.x);
