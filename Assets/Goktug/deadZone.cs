@@ -40,7 +40,6 @@ public class deadZone : MonoBehaviour
             alive = false;
             Invoke("CallRetry", 1f);
             CoinSystem.UpdateCoinCount(scoreCounter.Score);
-            print(CoinSystem.coin);
         }
     }
 

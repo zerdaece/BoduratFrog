@@ -29,7 +29,6 @@ public class platformDeleter : MonoBehaviour
         {
             if (other.GetComponent<platform>().counted == false)
                 scoreCounter.Score++;
-            print(scoreCounter.Score);
             Destroy(other.gameObject);
             platformSpawner.platformNumber--;
         }

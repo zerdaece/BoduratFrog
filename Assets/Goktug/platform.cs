@@ -6,5 +6,5 @@ using UnityEngine.SocialPlatforms.Impl;
 public class platform : MonoBehaviour
 {
     public bool counted;
-
+    public bool stepped;
 }

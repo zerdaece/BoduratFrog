@@ -12,23 +12,6 @@ public class TouchMove : MonoBehaviour
        if (Input.touchCount > 0)
        {
             Touch touch = Input.GetTouch(0);
-            if(touch.phase == TouchPhase.Began)
-            {
-                Debug.Log("Tıklandı");
-            }
-            if(touch.phase == TouchPhase.Stationary)
-            {
-                Debug.Log("Dokunuyor");
-            }
-            if(touch.phase == TouchPhase.Moved)
-            {
-                Debug.Log("Sürükleniyor");
-                Debug.Log(touch.deltaPosition);
-            }
-            if(touch.phase == TouchPhase.Ended)
-            {
-                Debug.Log("Tık bırakıldı");
-            }
        } 
        
     }
