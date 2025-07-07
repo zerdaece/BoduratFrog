@@ -961,7 +961,7 @@ Transform:
   m_GameObject: {fileID: 363491653}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -4.17, z: 0}
+  m_LocalPosition: {x: 0, y: -2.88, z: 0}
   m_LocalScale: {x: 0.4592328, y: 0.4592328, z: 0.4592328}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -986,9 +986,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpForce: 8
+  DefaultJumpForce: 8
   fallMultiplier: 2.5
   lowJumpMultiplier: 2
   cam: {fileID: 0}
+  Combocounter: 0
 --- !u!61 &363491657
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3010,6 +3012,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   counted: 0
+  stepped: 0
 --- !u!1 &841620001
 GameObject:
   m_ObjectHideFlags: 0
