@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class JumpMovement : MonoBehaviour
 {
     private Animator animator;
+    [SerializeField] private float gyrosensitivity = 5f; // sensitivity for gyroscope input
     public float jumpForce = 8f; // the upward force applied when jumping
     public float DefaultJumpForce = 8f;
     public float fallMultiplier = 2.5f; // the multiplier applied to the falling gravity
@@ -43,10 +44,24 @@ public class JumpMovement : MonoBehaviour
                 rb.velocity = new Vector2(touch.deltaPosition.x /4f, rb.velocity.y);
             }
         }*/
-
+        if (SystemInfo.supportsGyroscope)
+        {
+            print("Gyroscope is supported");
+            Input.gyro.enabled = true;
+            // Map gyroscope attitude to horizontal movement
+            float gyroInput = Input.gyro.attitude.y;
+            rb.linearVelocity = new Vector2(gyroInput * 10f * gyrosensitivity, rb.linearVelocity.y);
+        }
+        else
+        {
+            print("Gyroscope is not supported");
+        }
         if (Input.touchCount > 0)
         {
             Touch touch = Input.GetTouch(0);
+            // Gyroscope movement
+
+
             if (touch.phase == TouchPhase.Moved)
             {
                 // Dokunma girişini ekran genişliğine göre normalize ediyoruz
