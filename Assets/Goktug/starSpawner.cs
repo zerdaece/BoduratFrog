@@ -19,8 +19,9 @@ public class starSpawner : MonoBehaviour
     public Camera cam;
     [SerializeField] Object StarObject;
     [SerializeField] Object ObstacleObject;
+    [SerializeField] Object ComboObject;
     [SerializeField] BoxCollider2D leftside;
-    [SerializeField] BoxCollider2D rightside;
+    [SerializeField] BoxCollider2D upside;
 
     private Vector3 spawnerpos = new Vector3(0, 0, 0);//ehm bunu ben ekledim :p -goktug
                                                       // Start is called before the first frame update
@@ -31,14 +32,16 @@ public class starSpawner : MonoBehaviour
 
         if (StarObject != null && StarObject.objectobject != null)
         {
-            StartCoroutine(SpawnLoop(leftside, StarObject));
-            StartCoroutine(SpawnLoop(rightside, StarObject));
+            StartCoroutine(SpawnLoop(upside, StarObject));
         }
 
         if (ObstacleObject != null && ObstacleObject.objectobject != null)
         {
-            StartCoroutine(SpawnLoop(leftside, ObstacleObject));
-            StartCoroutine(SpawnLoop(rightside, ObstacleObject));
+            StartCoroutine(SpawnLoop(upside, ObstacleObject));
+        }
+        if(ComboObject !=null && ComboObject.objectobject != null)
+        {
+            StartCoroutine(SpawnLoop(upside, ComboObject));
         }
     }
 
@@ -91,9 +94,11 @@ public class starSpawner : MonoBehaviour
                 newObject.transform.Rotate(0, 180, 0);
                 rb.AddForce(Vector2.right * objectToSpawn.Speed, ForceMode2D.Impulse);
             }
-            else if (spawnArea == rightside)
+            else if (spawnArea == upside)
             {
-                rb.AddForce(Vector2.left * objectToSpawn.Speed, ForceMode2D.Impulse);
+                rb.linearVelocity = Vector2.zero;
+                rb.AddForce(Vector2.down * objectToSpawn.Speed, ForceMode2D.Impulse);
+                print("eeh");
             }
 
             // Deactivate the object after a delay

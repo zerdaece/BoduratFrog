@@ -7,4 +7,5 @@ public class platform : MonoBehaviour
 {
     public bool counted;
     public bool stepped;
+    public int combovalue;
 }
