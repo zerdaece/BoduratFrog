@@ -1,4 +1,5 @@
 using System.Runtime.InteropServices;
+using TMPro;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.UI;
@@ -18,7 +19,7 @@ public class JumpMovement : MonoBehaviour
     private bool isGrounded = false; // a flag to check if the character is grounded
     private float maxYValue; // maximum Y value for collision
     public int Combocounter = 0; // combo counter for the player
-
+    [SerializeField] private Text ComboCounterText; // UI text to display the combo counter
     void Start()
     {
         animator = gameObject.GetComponent<Animator>();
@@ -115,9 +116,10 @@ public class JumpMovement : MonoBehaviour
                     collidedPlatform.stepped = true;
                     Combocounter++;
                     print("Combo Counter: " + Combocounter);
-                    if (Combocounter > 0)
+                    if (Combocounter > 0 )
                     {
-                        jumpForce = 8 * (1 + Mathf.Log10(Mathf.Sqrt(Combocounter))); // Increase jump force based on combo counter
+                        ComboCounterText.text = "" + Combocounter; // Update the UI text with the current combo counter
+                        jumpForce = 8 * (1 + Mathf.Log10(Combocounter)); // Increase jump force based on combo counter
                         print("Jumpforce: " + jumpForce);
                     }
                 }
