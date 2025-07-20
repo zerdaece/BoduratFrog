@@ -6,6 +6,7 @@ public class MovablePlatform : MonoBehaviour
 {
     public Transform posA, posB;
     public float speed;
+    
     Vector2 targetPos;
 
     // Start is called before the first frame update
@@ -21,7 +22,7 @@ public class MovablePlatform : MonoBehaviour
           targetPos= posB.position;
         if(Vector2.Distance(transform.position, posB.position) < 1f)  
           targetPos= posA.position;
-        transform.position = Vector2.MoveTowards(transform.position, targetPos, speed * Time.deltaTime);  
+        transform.position = Vector2.MoveTowards(transform.position, new Vector2(targetPos.x, transform.position.y), speed * Time.deltaTime);  
     }
     
 }

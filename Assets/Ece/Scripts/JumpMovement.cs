@@ -12,21 +12,35 @@ public class JumpMovement : MonoBehaviour
     public float DefaultJumpForce = 8f;
     public float fallMultiplier = 2.5f; // the multiplier applied to the falling gravity
     public float lowJumpMultiplier = 2f; // the multiplier applied to the low jumping gravity
-    public Camera cam;
-    private GameObject ScoreCounter;
-    private ScoreCounter scoreCounter;
+
+
     private Rigidbody2D rb; // the character's rigidbody
     private bool isGrounded = false; // a flag to check if the character is grounded
     private float maxYValue; // maximum Y value for collision
     public int Combocounter = 0; // combo counter for the player
     [SerializeField] private Text ComboCounterText; // UI text to display the combo counter
+    
+    // New combo system variables
+    private bool justJumped = false; // Did player just jump
+    private bool isDescending = false; // Is player descending
+    [SerializeField] GameObject platformsContainer; // Reference to Platforms container
     void Start()
     {
         animator = gameObject.GetComponent<Animator>();
-        ScoreCounter = GameObject.Find("ScoreCounter");
         // get the character's rigidbody component
         rb = GetComponent<Rigidbody2D>();
         maxYValue = transform.position.y; // initialize maxYValue with player's initial Y position
+        
+        // Find the Platforms container
+        if (platformsContainer == null)
+        {
+            platformsContainer = GameObject.Find("Platforms");
+            if (platformsContainer == null)
+            {
+                Debug.LogError("Platforms container not found!");
+            }
+        }
+        
         // Time.timeScale = 0f;
         // cam.transform.position = new Vector3(0, 0, -10);
     }
@@ -85,10 +99,20 @@ public class JumpMovement : MonoBehaviour
             // apply upward force to jump
             rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
             isGrounded = false;
+            justJumped = true;
+            isDescending = false;
             animator.SetTrigger("Jump");
         }
         else
         {
+            // Track jump peak and descending state
+            if (justJumped && rb.linearVelocity.y <= 0 && !isDescending)
+            {
+                // Player just started descending
+                maxYValue = transform.position.y;
+                isDescending = true;
+            }
+            
             // apply falling gravity
             if (rb.linearVelocity.y < 0)
             {
@@ -104,31 +128,82 @@ public class JumpMovement : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collision)
     {
         // set the grounded flag to true when colliding with a platform from the top
-        if (collision.contacts[0].normal.y > 0.7f && rb.linearVelocityY <= 0)
+        if (collision.contacts[0].normal.y > 0.7f && rb.linearVelocity.y <= 0)
         {
-            rb.linearVelocityY = 0; // Reset vertical velocity to prevent bouncing
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0); // Reset vertical velocity to prevent bouncing
             isGrounded = true;
+            
             if (collision.gameObject.GetComponent<platform>() != null)
             {
                 platform collidedPlatform = collision.gameObject.GetComponent<platform>();
-                if (!collidedPlatform.stepped)
+                
+                // New combo system: only count if player was descending from a jump and landed on closest platform below
+                if (justJumped && isDescending && !collidedPlatform.stepped)
                 {
-                    collidedPlatform.stepped = true;
-                    Combocounter++;
-                    print("Combo Counter: " + Combocounter);
-                    if (Combocounter > 0 )
+                    GameObject closestPlatform = FindClosestPlatformBelow(maxYValue);
+                    
+                    if (closestPlatform != null && closestPlatform == collision.gameObject)
                     {
-                        ComboCounterText.text = "" + Combocounter; // Update the UI text with the current combo counter
-                        jumpForce = 8 * (1 + Mathf.Log10(Combocounter)); // Increase jump force based on combo counter
-                        print("Jumpforce: " + jumpForce);
+                        // This is the closest platform below the jump peak
+                        collidedPlatform.stepped = true;
+                        Combocounter++;
+                        print("Combo Counter: " + Combocounter);
+                        
+                        if (Combocounter > 0)
+                        {
+                            ComboCounterText.text = "" + Combocounter; // Update the UI text with the current combo counter
+                            // Prevent log(0) which would give -Infinity
+                            float comboMultiplier = Mathf.Max(1f, 1 + Mathf.Log(Mathf.Sqrt(Mathf.Max(1, Combocounter))));
+                            jumpForce = 8 * comboMultiplier; // Increase jump force based on combo counter
+                            print("Jumpforce: " + jumpForce);
+                        }
+                    }
+                    else
+                    {
+                        // Player didn't land on the closest platform - reset combo
+                        jumpForce = DefaultJumpForce;
+                        Combocounter = 0;
+                        ComboCounterText.text = "0";
                     }
                 }
-                else
+                
+                // Reset jump tracking variables
+                justJumped = false;
+                isDescending = false;
+            }
+        }
+    }
+
+    GameObject FindClosestPlatformBelow(float maxYValue)
+    {
+        if (platformsContainer == null) return null;
+        
+        GameObject closestPlatform = null;
+        float closestDistance = float.MaxValue;
+        Vector2 playerPosition = transform.position;
+        
+        // Check all child platforms in the Platforms container
+        foreach (Transform child in platformsContainer.transform)
+        {
+            if (child.gameObject.activeInHierarchy && child.gameObject.GetComponent<platform>() != null)
+            {
+                platform platformScript = child.gameObject.GetComponent<platform>();
+                Vector2 platformPosition = child.position;
+                
+                // Only consider platforms that are below the jump peak and not already stepped
+                if (platformPosition.y < maxYValue && !platformScript.stepped)
                 {
-                    jumpForce = DefaultJumpForce; // Reset jump force if the player has already stepped on this platform
-                    Combocounter = 0;
+                    // Calculate vertical distance (more important than horizontal)
+                    float distance = maxYValue - platformPosition.y;
+                    if (distance < closestDistance)
+                  {
+                        closestDistance = distance;
+                        closestPlatform = child.gameObject;
+                    }
                 }
             }
         }
+        
+        return closestPlatform;
     }
 }

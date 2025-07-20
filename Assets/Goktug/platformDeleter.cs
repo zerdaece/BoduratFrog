@@ -29,7 +29,9 @@ public class platformDeleter : MonoBehaviour
         {
             if (other.GetComponent<platform>().counted == false)
                 scoreCounter.Score++;
-            Destroy(other.gameObject);
+            
+            // Platform'u yok etmek yerine pool'a geri döndür
+            platformSpawner.ReturnPlatformToPool(other.gameObject);
             platformSpawner.platformNumber--;
         }
 
