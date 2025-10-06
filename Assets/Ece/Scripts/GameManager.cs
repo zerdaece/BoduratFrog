@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using Firebase.Analytics;
 
 public class GameManager : MonoBehaviour
 {
@@ -41,6 +42,7 @@ public class GameManager : MonoBehaviour
     finger.SetActive(true);
     Invoke("FingerAnimFinish", 3f);
   
+    FirebaseAnalytics.LogEvent("level_start");
     
     playButton.SetActive(false);
     score.SetActive(true);

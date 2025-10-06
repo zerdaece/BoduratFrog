@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:keep="@string/gcm_defaultSenderId,@string/google_storage_bucket,@string/project_id,@string/google_api_key,@string/google_crash_reporting_api_key,@string/google_app_id">
+  <string name="gcm_defaultSenderId" translatable="false">569885960231</string>
+  <string name="google_storage_bucket" translatable="false">bodurathoppyfrog.firebasestorage.app</string>
+  <string name="project_id" translatable="false">bodurathoppyfrog</string>
+  <string name="google_api_key" translatable="false">AIzaSyCSDUE1x3vOGsp5T8w-oh_beAXjqiDKmJ8</string>
+  <string name="google_crash_reporting_api_key" translatable="false">AIzaSyCSDUE1x3vOGsp5T8w-oh_beAXjqiDKmJ8</string>
+  <string name="google_app_id" translatable="false">1:569885960231:android:efffa49b682f3686cd8602</string>
+</resources>

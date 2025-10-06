@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "569885960231",
+    "project_id": "bodurathoppyfrog",
+    "storage_bucket": "bodurathoppyfrog.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:569885960231:android:efffa49b682f3686cd8602",
+        "android_client_info": {
+          "package_name": "com.Bodurat.HoppyFrog"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCSDUE1x3vOGsp5T8w-oh_beAXjqiDKmJ8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using Firebase.Analytics;
 
 public class deadZone : MonoBehaviour
 {
@@ -37,6 +38,7 @@ public class deadZone : MonoBehaviour
             deadSound.Play();
             gameOver = true;
             Debug.Log("ÖLDÜN");
+            FirebaseAnalytics.LogEvent("level_end");
             alive = false;
             Invoke("CallRetry", 1f);
             CoinSystem.UpdateCoinCount(scoreCounter.Score);
@@ -46,6 +48,7 @@ public class deadZone : MonoBehaviour
     public void CallRetry()
     {
         gameManager.Retry();
+        FirebaseAnalytics.LogEvent("retry");
     }
 
 }//10 numaara kod yazmışın kral
