@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: Kirpik
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerHead
+  BallPose: {fileID: 21300000, guid: 3845d5c57e42a6b44a1ee29d059d6763, type: 3}
+  CoolPose: {fileID: 21300000, guid: 821cd78b85f87c149a96773ed59b483d, type: 3}
+  SadPose: {fileID: 21300000, guid: 27d5903b22cdb9945ba103e64ab9c02c, type: 3}
+  StarPose: {fileID: 21300000, guid: 0e885d88e0b11c14bab21d67cc3db6f9, type: 3}
+  IdlePose: {fileID: 21300000, guid: 2bd74816dddbab94a9d9f256f844a10b, type: 3}
+  HeadName: 
+  acquired: 0

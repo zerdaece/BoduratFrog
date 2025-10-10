@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: PlayerPose
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerPose
+  BallPose: {fileID: 21300000, guid: a15923924a1ff4b4493947b5abae7c7b, type: 3}
+  CoolPose: {fileID: 21300000, guid: c643c7157d93fac48b709d949ce0d7c1, type: 3}
+  SadPose: {fileID: 21300000, guid: 1051f2636ca1d6c4eba06c9f5eb531e5, type: 3}
+  StarPose: {fileID: 21300000, guid: c5f17d9647402fd4cac448e695335d6d, type: 3}
+  IdlePose: {fileID: 21300000, guid: 3c7a3b8a853b40d4ca66ab0468247c1a, type: 3}

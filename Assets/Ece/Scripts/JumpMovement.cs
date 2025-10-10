@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class JumpMovement : MonoBehaviour
 {
+
     private Animator animator;
     [SerializeField] private float gyrosensitivity = 5f; // sensitivity for gyroscope input
     public float jumpForce = 8f; // the upward force applied when jumping
@@ -19,18 +20,19 @@ public class JumpMovement : MonoBehaviour
     private float maxYValue; // maximum Y value for collision
     public int Combocounter = 0; // combo counter for the player
     [SerializeField] private Text ComboCounterText; // UI text to display the combo counter
-    
+
     // New combo system variables
     private bool justJumped = false; // Did player just jump
     private bool isDescending = false; // Is player descending
     [SerializeField] GameObject platformsContainer; // Reference to Platforms container
+
     void Start()
     {
         animator = gameObject.GetComponent<Animator>();
         // get the character's rigidbody component
         rb = GetComponent<Rigidbody2D>();
         maxYValue = transform.position.y; // initialize maxYValue with player's initial Y position
-        
+
         // Find the Platforms container
         if (platformsContainer == null)
         {
@@ -40,7 +42,7 @@ public class JumpMovement : MonoBehaviour
                 Debug.LogError("Platforms container not found!");
             }
         }
-        
+
         // Time.timeScale = 0f;
         // cam.transform.position = new Vector3(0, 0, -10);
     }
@@ -112,7 +114,7 @@ public class JumpMovement : MonoBehaviour
                 maxYValue = transform.position.y;
                 isDescending = true;
             }
-            
+
             // apply falling gravity
             if (rb.linearVelocity.y < 0)
             {
@@ -132,23 +134,26 @@ public class JumpMovement : MonoBehaviour
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0); // Reset vertical velocity to prevent bouncing
             isGrounded = true;
-            
+
             if (collision.gameObject.GetComponent<platform>() != null)
             {
                 platform collidedPlatform = collision.gameObject.GetComponent<platform>();
-                
+                if(PlayerSpriteHandler.Instance)
+                {
+                    PlayerSpriteHandler.Instance.ChangeRandomPose();
+                }
                 // New combo system: only count if player was descending from a jump and landed on closest platform below
                 if (justJumped && isDescending && !collidedPlatform.stepped)
                 {
                     GameObject closestPlatform = FindClosestPlatformBelow(maxYValue);
-                    
+
                     if (closestPlatform != null && closestPlatform == collision.gameObject)
                     {
                         // This is the closest platform below the jump peak
                         collidedPlatform.stepped = true;
                         Combocounter++;
                         print("Combo Counter: " + Combocounter);
-                        
+
                         if (Combocounter > 0)
                         {
                             ComboCounterText.text = "" + Combocounter; // Update the UI text with the current combo counter
@@ -166,7 +171,7 @@ public class JumpMovement : MonoBehaviour
                         ComboCounterText.text = "0";
                     }
                 }
-                
+
                 // Reset jump tracking variables
                 justJumped = false;
                 isDescending = false;
@@ -177,11 +182,11 @@ public class JumpMovement : MonoBehaviour
     GameObject FindClosestPlatformBelow(float maxYValue)
     {
         if (platformsContainer == null) return null;
-        
+
         GameObject closestPlatform = null;
         float closestDistance = float.MaxValue;
         Vector2 playerPosition = transform.position;
-        
+
         // Check all child platforms in the Platforms container
         foreach (Transform child in platformsContainer.transform)
         {
@@ -189,21 +194,21 @@ public class JumpMovement : MonoBehaviour
             {
                 platform platformScript = child.gameObject.GetComponent<platform>();
                 Vector2 platformPosition = child.position;
-                
+
                 // Only consider platforms that are below the jump peak and not already stepped
                 if (platformPosition.y < maxYValue && !platformScript.stepped)
                 {
                     // Calculate vertical distance (more important than horizontal)
                     float distance = maxYValue - platformPosition.y;
                     if (distance < closestDistance)
-                  {
+                    {
                         closestDistance = distance;
                         closestPlatform = child.gameObject;
                     }
                 }
             }
         }
-        
+
         return closestPlatform;
     }
 }

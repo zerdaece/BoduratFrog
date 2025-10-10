@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class GameManager : MonoBehaviour
   public GameObject Logobutton;
   public Animator fingeranimator;
   public GameObject finger;
+  
   
   
 
@@ -49,7 +51,6 @@ public class GameManager : MonoBehaviour
     highScore.SetActive(false);
     lastScore.SetActive(false);
     Logobutton.SetActive(false);
-    
   }
   public void Retry()
   {

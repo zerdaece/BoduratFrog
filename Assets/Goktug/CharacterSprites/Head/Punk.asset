@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: Punk
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerHead
+  BallPose: {fileID: 21300000, guid: d10c254c1ed868542a0a4abad248de7b, type: 3}
+  CoolPose: {fileID: 21300000, guid: e025e2efe8aecf94d82de7947c6231f6, type: 3}
+  SadPose: {fileID: 21300000, guid: 97b47b870578aeb4eb7e3d3cc95a0136, type: 3}
+  StarPose: {fileID: 21300000, guid: 337418fb5d6deb847a9fbbc110f17237, type: 3}
+  IdlePose: {fileID: 21300000, guid: b6517ad1612bd524b80993b84a19efb2, type: 3}
+  HeadName: 
+  acquired: 0

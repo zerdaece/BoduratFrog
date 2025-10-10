@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: Tac
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerHead
+  BallPose: {fileID: 21300000, guid: 16bcf3c855885dd4380ea770a0e4baca, type: 3}
+  CoolPose: {fileID: 21300000, guid: 678f80bce10866d4990ce0a6f9f31506, type: 3}
+  SadPose: {fileID: 21300000, guid: b4180b69727f05e45b1b367c8b3e0b44, type: 3}
+  StarPose: {fileID: 21300000, guid: 55e86c7626aa50a4b82402b9b49ec41c, type: 3}
+  IdlePose: {fileID: 21300000, guid: 02e3bb19d6f5ef2489a69f7c63f1c847, type: 3}
+  HeadName: 
+  acquired: 0

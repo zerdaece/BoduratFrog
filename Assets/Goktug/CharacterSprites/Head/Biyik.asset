@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: Biyik
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerHead
+  BallPose: {fileID: 21300000, guid: d19a10567de2c8d47bd56444f8c60e0f, type: 3}
+  CoolPose: {fileID: 21300000, guid: 2ab5fd5594ec94c4cba1e41c01db9ffb, type: 3}
+  SadPose: {fileID: 21300000, guid: 9cd17006c3537964a9adc11cca637cc1, type: 3}
+  StarPose: {fileID: 21300000, guid: b5b201639d184444fb7bb6ba0f8b7464, type: 3}
+  IdlePose: {fileID: 21300000, guid: 0dc12427d4ee2c747a4f22c7c622a917, type: 3}
+  HeadName: 
+  acquired: 0

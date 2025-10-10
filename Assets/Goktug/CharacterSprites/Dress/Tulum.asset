@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: Tulum
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerDress
+  BallPose: {fileID: 21300000, guid: daf511d1c096f5244ab14cbbd0722034, type: 3}
+  CoolPose: {fileID: 21300000, guid: 272885e2dd4aadd439eba11bc99560de, type: 3}
+  SadPose: {fileID: 21300000, guid: cb2ba67ffbc20a14e8c1fe0c941bb8fc, type: 3}
+  StarPose: {fileID: 21300000, guid: d194ac01f997a6c41b86b04fbf427ccf, type: 3}
+  IdlePose: {fileID: 21300000, guid: cbfb88375f2d67d41a33bd39bafa7bbd, type: 3}
+  DressName: 
+  acquired: 0
