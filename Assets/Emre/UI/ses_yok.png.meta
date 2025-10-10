@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: ac5e389473ca050429ddd82f197beaab
+guid: 3cf75fdb55a161b4bba5c56da6526f0f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2721606285458148505
-    second: play_buton_0
+      213: 3903180055627958073
+    second: ses_yok_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,23 +126,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: play_buton_0
+      name: ses_yok_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 419
-        height: 421
+        width: 345
+        height: 345
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: b1bf0fe1fd6d43d4d8097bc78679f6a4
-      internalID: -966324287
+      spriteID: 9370816a491ea2630800000000000000
+      internalID: 3903180055627958073
       vertices: []
       indices: 
       edges: []
@@ -151,7 +151,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: eda7cb62e2fa3994695df1672ac64a10
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -160,8 +160,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      play_buton_0: -966324287
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

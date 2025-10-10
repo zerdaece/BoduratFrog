@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: ac5e389473ca050429ddd82f197beaab
+guid: a895300a9f5469b489bf69564ce7dc32
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2721606285458148505
-    second: play_buton_0
+      213: 4396598096414802335
+    second: dalga_0
+  - first:
+      213: 7509796546712332656
+    second: dalga_1
+  - first:
+      213: -3609939279170441657
+    second: dalga_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,23 +132,67 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: play_buton_0
+      name: dalga_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 419
-        height: 421
+        y: 327
+        width: 212
+        height: 149
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: b1bf0fe1fd6d43d4d8097bc78679f6a4
-      internalID: -966324287
+      spriteID: f9186fcacaad30d30800000000000000
+      internalID: 4396598096414802335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dalga_1
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 106
+        width: 51
+        height: 259
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0796e3eab28283860800000000000000
+      internalID: 7509796546712332656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dalga_2
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 0
+        width: 190
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74ee0541a5be6edc0800000000000000
+      internalID: -3609939279170441657
       vertices: []
       indices: 
       edges: []
@@ -151,7 +201,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: eda7cb62e2fa3994695df1672ac64a10
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -160,8 +210,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      play_buton_0: -966324287
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

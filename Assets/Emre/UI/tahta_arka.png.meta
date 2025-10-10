@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: ac5e389473ca050429ddd82f197beaab
+guid: 3804a3fc698fd9741af0488569fa5282
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2721606285458148505
-    second: play_buton_0
+      213: 5662851162868795806
+    second: tahta_arka_0
+  - first:
+      213: -27845245600385846
+    second: tahta_arka_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +129,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: play_buton_0
+      name: tahta_arka_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 419
-        height: 421
+        width: 551
+        height: 279
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +144,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b1bf0fe1fd6d43d4d8097bc78679f6a4
-      internalID: -966324287
+      spriteID: e4fdb2bb5e2df7b4c8d115c6dddb5405
+      internalID: 679331298
       vertices: []
       indices: 
       edges: []
@@ -151,7 +154,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: eda7cb62e2fa3994695df1672ac64a10
+    spriteID: 4d4705fc70ba5b341959aa8233b0a12a
     internalID: 0
     vertices: []
     indices: 
@@ -161,7 +164,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      play_buton_0: -966324287
+      tahta_arka_0: 679331298
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
