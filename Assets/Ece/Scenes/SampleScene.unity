@@ -1340,7 +1340,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8a793126b5d24c4993ee25570a0947a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gyrosensitivity: 5
+  gyrosensitivity: 0.5
   jumpForce: 8
   DefaultJumpForce: 8
   fallMultiplier: 2.5
