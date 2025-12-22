@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 7f7791a8ed091ba4f86b7389ffd27326
+guid: 6ca97a72f6eab694183ff6612ec054e8
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8444442904468579597
-    second: UI_Background_0
+      213: 4778077315378202685
+    second: water_platform_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: UI_Background_0
+      name: water_platform_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 2160
-        height: 25457
+        width: 1144
+        height: 465
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3fa15114bef4fca80800000000000000
-      internalID: -8444442904468579597
+      spriteID: d384874c0042f4240800000000000000
+      internalID: 4778077315378202685
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      UI_Background_0: -8444442904468579597
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
