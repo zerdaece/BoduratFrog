@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: dadec90565a85ab439bee6103814837b, type: 3}
   m_Name: Papyon
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerDress
+  m_EditorClassIdentifier:
   BallPose: {fileID: 21300000, guid: 58fd1f21b04d7d24f953b3fdda63f67e, type: 3}
   CoolPose: {fileID: 21300000, guid: 63f83ce2643cd8c439d90a74d44e29bc, type: 3}
   SadPose: {fileID: 21300000, guid: 249ff13854d67344aae4ee3ba0aea745, type: 3}

@@ -1,10 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
-using UnityEngine.SocialPlatforms.Impl;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -18,9 +14,9 @@ public class GameManager : MonoBehaviour
   public GameObject Logobutton;
   public Animator fingeranimator;
   public GameObject finger;
-  
-  
-  
+
+
+
 
 
   private void Awake()
@@ -32,6 +28,8 @@ public class GameManager : MonoBehaviour
     score.SetActive(true);
     highScore.SetActive(true);
     lastScore.SetActive(true);
+    QualitySettings.vSyncCount = 0;
+    Application.targetFrameRate = 144;
   }
 
 
@@ -42,8 +40,8 @@ public class GameManager : MonoBehaviour
     Time.timeScale = 1;
     finger.SetActive(true);
     Invoke("FingerAnimFinish", 3f);
-  
-    
+
+
     playButton.SetActive(false);
     score.SetActive(true);
     soundButton.SetActive(true);
@@ -57,16 +55,16 @@ public class GameManager : MonoBehaviour
     Time.timeScale = 1;
     SceneManager.LoadScene(0);
   }
-   private void FingerAnim()
-   {
-    
+  private void FingerAnim()
+  {
+
     fingeranimator.enabled = true;
-   }
-   private void FingerAnimFinish()
-   {
-    fingeranimator.enabled= false;
+  }
+  private void FingerAnimFinish()
+  {
+    fingeranimator.enabled = false;
     Destroy(finger);
-   }
+  }
 
 
 }

@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 68e89c0b79a6eab489994f7cd58d606a, type: 3}
   m_Name: Kirpik
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerHead
+  m_EditorClassIdentifier: 
   BallPose: {fileID: 21300000, guid: 3845d5c57e42a6b44a1ee29d059d6763, type: 3}
   CoolPose: {fileID: 21300000, guid: 821cd78b85f87c149a96773ed59b483d, type: 3}
   SadPose: {fileID: 21300000, guid: 27d5903b22cdb9945ba103e64ab9c02c, type: 3}

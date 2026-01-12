@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 68e89c0b79a6eab489994f7cd58d606a, type: 3}
   m_Name: Tac
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerHead
+  m_EditorClassIdentifier: 
   BallPose: {fileID: 21300000, guid: 16bcf3c855885dd4380ea770a0e4baca, type: 3}
   CoolPose: {fileID: 21300000, guid: 678f80bce10866d4990ce0a6f9f31506, type: 3}
   SadPose: {fileID: 21300000, guid: b4180b69727f05e45b1b367c8b3e0b44, type: 3}

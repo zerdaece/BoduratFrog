@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 68e89c0b79a6eab489994f7cd58d606a, type: 3}
   m_Name: Kurdele
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerHead
+  m_EditorClassIdentifier: 
   BallPose: {fileID: 21300000, guid: f8e716b7d6f46cd4c96ed3edbc159bcd, type: 3}
   CoolPose: {fileID: 21300000, guid: 15b1a333ca9ccb541ac672f3138a201a, type: 3}
   SadPose: {fileID: 21300000, guid: aef90a95eec733e4c882de030321689e, type: 3}

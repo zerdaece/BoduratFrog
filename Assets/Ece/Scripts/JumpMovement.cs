@@ -6,15 +6,14 @@ using UnityEngine.UI;
 
 public class JumpMovement : MonoBehaviour
 {
-
+    public JumpMovement instance;
     private Animator animator;
-    [SerializeField] private float gyrosensitivity = 5f; // sensitivity for gyroscope input
     public float jumpForce = 8f; // the upward force applied when jumping
     public float DefaultJumpForce = 8f;
     public float fallMultiplier = 2.5f; // the multiplier applied to the falling gravity
     public float lowJumpMultiplier = 2f; // the multiplier applied to the low jumping gravity
 
-
+    private bool hascombo = false;
     private Rigidbody2D rb; // the character's rigidbody
     private bool isGrounded = false; // a flag to check if the character is grounded
     private float maxYValue; // maximum Y value for collision
@@ -24,8 +23,13 @@ public class JumpMovement : MonoBehaviour
     // New combo system variables
     private bool justJumped = false; // Did player just jump
     private bool isDescending = false; // Is player descending
+    [SerializeField] int sensitivity = 5; // sensitivity for touch input
     [SerializeField] GameObject platformsContainer; // Reference to Platforms container
 
+    void Awake()
+    {
+        instance = this;
+    }
     void Start()
     {
         animator = gameObject.GetComponent<Animator>();
@@ -61,18 +65,6 @@ public class JumpMovement : MonoBehaviour
                 rb.velocity = new Vector2(touch.deltaPosition.x /4f, rb.velocity.y);
             }
         }*/
-        if (SystemInfo.supportsGyroscope)
-        {
-            print("Gyroscope is supported");
-            Input.gyro.enabled = true;
-            // Map gyroscope attitude to horizontal movement
-            float gyroInput = Input.gyro.attitude.y;
-            rb.linearVelocity = new Vector2(gyroInput * 10f * gyrosensitivity, rb.linearVelocity.y);
-        }
-        else
-        {
-            print("Gyroscope is not supported");
-        }
         if (Input.touchCount > 0)
         {
             Touch touch = Input.GetTouch(0);
@@ -85,7 +77,7 @@ public class JumpMovement : MonoBehaviour
                 float normalizedDeltaX = touch.deltaPosition.x / Screen.width;
 
                 // Bu değeri kullanarak karakterin hızını ayarlıyoruz
-                rb.linearVelocity = new Vector2(normalizedDeltaX * 150f, rb.linearVelocity.y);
+                rb.linearVelocity = new Vector2(normalizedDeltaX * sensitivity * 30f, rb.linearVelocity.y);
             }
         }
 
@@ -127,6 +119,7 @@ public class JumpMovement : MonoBehaviour
         }
     }
 
+
     void OnCollisionEnter2D(Collision2D collision)
     {
         // set the grounded flag to true when colliding with a platform from the top
@@ -138,7 +131,7 @@ public class JumpMovement : MonoBehaviour
             if (collision.gameObject.GetComponent<platform>() != null)
             {
                 platform collidedPlatform = collision.gameObject.GetComponent<platform>();
-                if(PlayerSpriteHandler.Instance)
+                if (PlayerSpriteHandler.Instance)
                 {
                     PlayerSpriteHandler.Instance.ChangeRandomPose();
                 }
@@ -156,6 +149,7 @@ public class JumpMovement : MonoBehaviour
 
                         if (Combocounter > 0)
                         {
+                            hascombo = true;
                             ComboCounterText.text = "" + Combocounter; // Update the UI text with the current combo counter
                             // Prevent log(0) which would give -Infinity
                             float comboMultiplier = Mathf.Max(1f, 1 + Mathf.Log(Mathf.Sqrt(Mathf.Max(1, Combocounter))));
@@ -169,6 +163,12 @@ public class JumpMovement : MonoBehaviour
                         jumpForce = DefaultJumpForce;
                         Combocounter = 0;
                         ComboCounterText.text = "0";
+                        if (hascombo)
+                        {
+                            PlayerSpriteHandler.Instance.SetPoseSprites("SadPose");
+                            hascombo = false;
+                            // Optional: Add some feedback for combo break
+                        }
                     }
                 }
 
@@ -185,8 +185,6 @@ public class JumpMovement : MonoBehaviour
 
         GameObject closestPlatform = null;
         float closestDistance = float.MaxValue;
-        Vector2 playerPosition = transform.position;
-
         // Check all child platforms in the Platforms container
         foreach (Transform child in platformsContainer.transform)
         {

@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 68e89c0b79a6eab489994f7cd58d606a, type: 3}
   m_Name: Biyik
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerHead
+  m_EditorClassIdentifier: 
   BallPose: {fileID: 21300000, guid: d19a10567de2c8d47bd56444f8c60e0f, type: 3}
   CoolPose: {fileID: 21300000, guid: 2ab5fd5594ec94c4cba1e41c01db9ffb, type: 3}
   SadPose: {fileID: 21300000, guid: 9cd17006c3537964a9adc11cca637cc1, type: 3}
