@@ -15,7 +15,7 @@ public class PlayerSpriteHandler : MonoBehaviour
     [SerializeField] private bool randomizeOnStart = true;
     public string currentPose;
 
-    [SerializeField] Rigidbody2D rb { get => transform.GetComponent<Rigidbody2D>(); set => rb = value; }
+    public Rigidbody2D rb { get => transform.GetComponent<Rigidbody2D>(); set => rb = value; }
     void Awake()
     {
         if (Instance == null)
