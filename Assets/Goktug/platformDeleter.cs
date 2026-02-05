@@ -27,10 +27,11 @@ public class platformDeleter : MonoBehaviour
     {
         if (other.CompareTag("Zemin"))
         {
-            
             if (other.GetComponent<platform>().counted == false)
-            Debug.Log("Platform Deleter'a çarptı");
+            {
+                Debug.Log("Platform Deleter'a çarptı");
                 scoreCounter.Score++;
+            }
             
             // Platform'u yok etmek yerine pool'a geri döndür
             platformSpawner.ReturnPlatformToPool(other.gameObject);

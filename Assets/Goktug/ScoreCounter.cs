@@ -18,8 +18,8 @@ public class ScoreCounter : MonoBehaviour
     {
         Player = GameObject.FindGameObjectWithTag("Player");
         transform.position = Player.transform.position;
-        HighScoreText.text= PlayerPrefs.GetInt("HighScore", 0).ToString("HighScore: "+Score.ToString());
-        LastScoreText.text= PlayerPrefs.GetInt("LastScore", 0).ToString("LastScore: "+Score.ToString());
+        HighScoreText.text= "HighScore: " + PlayerPrefs.GetInt("HighScore", 0).ToString();
+        LastScoreText.text= "LastScore: " + PlayerPrefs.GetInt("LastScore", 0).ToString();
 
     }
 
@@ -37,13 +37,13 @@ public class ScoreCounter : MonoBehaviour
                 
                 Score++;
                 PlayerPrefs.SetInt("LastScore", Score);
-                LastScoreText.text= Score.ToString("LastScore: "+Score.ToString());
+                LastScoreText.text= "LastScore: " + Score.ToString();
                 scoreText.text =  Score.ToString();
                
                 if(Score > PlayerPrefs.GetInt("HighScore", 0))
                 {
                     PlayerPrefs.SetInt("HighScore", Score);
-                    HighScoreText.text = Score.ToString("HighScore: "+Score.ToString());
+                    HighScoreText.text = "HighScore: " + Score.ToString();
                 }
                 other.GetComponent<platform>().counted = true;
                

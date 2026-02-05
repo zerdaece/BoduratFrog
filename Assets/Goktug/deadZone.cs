@@ -34,6 +34,7 @@ public class deadZone : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            if (gameOver) return;
             deadSound.Play();
             gameOver = true;
             Debug.Log("ÖLDÜN");
