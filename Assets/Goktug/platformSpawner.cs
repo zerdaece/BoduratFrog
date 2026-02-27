@@ -113,7 +113,7 @@ public class platformSpawner : MonoBehaviour
 
         if (playerY < 21f)
         {
-            if (playerY < 7f)
+            if (playerY < 16f)
             {
                 selectedPool = platformPool1;
                 selectedPrefab = platformPrefab1;
