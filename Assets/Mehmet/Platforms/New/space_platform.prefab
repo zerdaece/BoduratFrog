@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4912784673284804330}
   - component: {fileID: -4244670389119167387}
   - component: {fileID: 7922930132044714215}
+  - component: {fileID: -3495608240576954547}
   m_Layer: 0
   m_Name: space_platform
   m_TagString: Zemin
@@ -185,3 +186,18 @@ PlatformEffector2D:
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
+--- !u!114 &-3495608240576954547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5487327213576881958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62da6fe4a82c62f4bb63afa8b2023e3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::platform
+  counted: 0
+  stepped: 0
+  combovalue: 0
