@@ -46,13 +46,18 @@ public class JumpMovement : MonoBehaviour
                 Debug.LogError("Platforms container not found!");
             }
         }
-
-        // Time.timeScale = 0f;
-        // cam.transform.position = new Vector3(0, 0, -10);
     }
 
     void FixedUpdate()
     {
+        // Check if game has started
+        if (!GameManager.isGameStarted)
+        {
+            // Oyun başlamadıysa, kurbağayı idle durumda tutuyoruz
+            rb.linearVelocity = Vector2.zero;
+            return;
+        }
+
         // apply horizontal movement
         /*float moveHorizontal = Input.GetAxis("Horizontal");
         rb.velocity = new Vector2(moveHorizontal * 5f, rb.velocity.y);*/
