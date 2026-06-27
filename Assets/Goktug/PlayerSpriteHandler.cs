@@ -70,17 +70,14 @@ public class PlayerSpriteHandler : MonoBehaviour
 
         if (playerPoses == null || playerPoses.Count == 0) { print("No poses available."); return; }
 
-        int randomIndex = UnityEngine.Random.Range(0, playerPoses.Count);
-        while (randomIndex == 3)
+        int randomIndex;
+        string selectedPose;
+        do
         {
             randomIndex = UnityEngine.Random.Range(0, playerPoses.Count);
-        }
-        string selectedPose = playerPoses[randomIndex];
-        if (selectedPose == currentPose)
-        {
-            randomIndex = (randomIndex + 1) % playerPoses.Count;
             selectedPose = playerPoses[randomIndex];
         }
+        while (selectedPose == "SadPose" || selectedPose == currentPose);
         currentPose = selectedPose;
         SetPoseSprites(selectedPose);
     }

@@ -136,10 +136,6 @@ public class JumpMovement : MonoBehaviour
             if (collision.gameObject.GetComponent<platform>() != null)
             {
                 platform collidedPlatform = collision.gameObject.GetComponent<platform>();
-                if (PlayerSpriteHandler.Instance)
-                {
-                    PlayerSpriteHandler.Instance.ChangeRandomPose();
-                }
                 // New combo system: only count if player was descending from a jump and landed on closest platform below
                 if (justJumped && isDescending && !collidedPlatform.stepped)
                 {
@@ -161,6 +157,7 @@ public class JumpMovement : MonoBehaviour
                             jumpForce = 8 * comboMultiplier; // Increase jump force based on combo counter
                             print("Jumpforce: " + jumpForce);
                         }
+                        PlayerSpriteHandler.Instance?.ChangeRandomPose();
                     }
                     else
                     {
@@ -170,11 +167,18 @@ public class JumpMovement : MonoBehaviour
                         ComboCounterText.text = "0";
                         if (hascombo)
                         {
-                            PlayerSpriteHandler.Instance.SetPoseSprites("SadPose");
+                            PlayerSpriteHandler.Instance?.SetPoseSprites("SadPose");
                             hascombo = false;
-                            // Optional: Add some feedback for combo break
+                        }
+                        else
+                        {
+                            PlayerSpriteHandler.Instance?.ChangeRandomPose();
                         }
                     }
+                }
+                else
+                {
+                    PlayerSpriteHandler.Instance?.ChangeRandomPose();
                 }
 
                 // Reset jump tracking variables
