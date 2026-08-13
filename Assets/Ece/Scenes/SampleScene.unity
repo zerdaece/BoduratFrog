@@ -854,7 +854,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 213263263}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
@@ -869,7 +869,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 0.28923607
-  MaxDistance: 2
+  MaxDistance: 1
   Pan2D: 0
   rolloffMode: 2
   BypassEffects: 0
@@ -879,8 +879,8 @@ AudioSource:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0.275
-      value: 1
+      time: 0
+      value: 0.3438301
       inSlope: -3.6378124
       outSlope: -3.6378124
       tangentMode: 0
@@ -888,16 +888,7 @@ AudioSource:
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 0.4768036
-      value: 0.4055252
-      inSlope: -1.5255754
-      outSlope: -1.5255754
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0.23581842
-    - serializedVersion: 3
-      time: 1
+      time: 0.031757355
       value: 0
       inSlope: -0.27511045
       outSlope: -0.27511045
@@ -1260,6 +1251,7 @@ GameObject:
   - component: {fileID: 363491656}
   - component: {fileID: 363491659}
   - component: {fileID: 363491660}
+  - component: {fileID: 363491661}
   m_Layer: 0
   m_Name: frog_jump
   m_TagString: Player
@@ -1438,6 +1430,14 @@ MonoBehaviour:
   - StarPose
   randomizeOnStart: 1
   currentPose: 
+--- !u!81 &363491661
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 363491653}
+  m_Enabled: 1
 --- !u!1 &383904915
 GameObject:
   m_ObjectHideFlags: 0
@@ -1799,7 +1799,6 @@ GameObject:
   m_Component:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
-  - component: {fileID: 519420029}
   - component: {fileID: 519420033}
   - component: {fileID: 519420034}
   - component: {fileID: 519420035}
@@ -1810,14 +1809,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &519420029
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -5130,13 +5121,13 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1180095981}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 7af48021dd699c444b6a543968ff09c8, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.125
+  m_Volume: 0.02
   m_Pitch: 0.5
   Loop: 0
   Mute: 0
@@ -5144,10 +5135,10 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 0.55
-  MaxDistance: 1.0957031
+  MinDistance: 0
+  MaxDistance: 0.2
   Pan2D: 0
-  rolloffMode: 2
+  rolloffMode: 1
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -5155,7 +5146,7 @@ AudioSource:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0.275
+      time: 0
       value: 1
       inSlope: -3.6378124
       outSlope: -3.6378124
@@ -5164,16 +5155,7 @@ AudioSource:
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 0.4768036
-      value: 0.4055252
-      inSlope: -1.5255754
-      outSlope: -1.5255754
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0.23581842
-    - serializedVersion: 3
-      time: 1
+      time: 0.023422241
       value: 0
       inSlope: -0.27511045
       outSlope: -0.27511045
@@ -9957,13 +9939,13 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2048351064}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 7af48021dd699c444b6a543968ff09c8, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.125
+  m_Volume: 0.02
   m_Pitch: 0.5
   Loop: 0
   Mute: 0
@@ -9971,10 +9953,10 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 0.27957726
-  MaxDistance: 0.9389591
+  MinDistance: 0
+  MaxDistance: 0.2
   Pan2D: 0
-  rolloffMode: 2
+  rolloffMode: 0
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -9982,8 +9964,8 @@ AudioSource:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0.275
-      value: 1
+      time: 0
+      value: 0.85588837
       inSlope: -3.6378124
       outSlope: -3.6378124
       tangentMode: 0
@@ -9991,16 +9973,7 @@ AudioSource:
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 0.4768036
-      value: 0.4055252
-      inSlope: -1.5255754
-      outSlope: -1.5255754
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0.23581842
-    - serializedVersion: 3
-      time: 1
+      time: 0.031764984
       value: 0
       inSlope: -0.27511045
       outSlope: -0.27511045

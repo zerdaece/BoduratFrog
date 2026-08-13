@@ -127,8 +127,21 @@ public class JumpMovement : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
+        // Check every contact point, not just the first - a single sideways/corner
+        // clip can otherwise report contacts[0] as a near-vertical normal and be
+        // mistaken for a top landing.
+        float bestNormalY = float.NegativeInfinity;
+        for (int i = 0; i < collision.contactCount; i++)
+        {
+            float normalY = collision.GetContact(i).normal.y;
+            if (normalY > bestNormalY)
+            {
+                bestNormalY = normalY;
+            }
+        }
+
         // set the grounded flag to true when colliding with a platform from the top
-        if (collision.contacts[0].normal.y > 0.7f && rb.linearVelocity.y <= 0)
+        if (bestNormalY > 0.7f && rb.linearVelocity.y <= 0)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0); // Reset vertical velocity to prevent bouncing
             isGrounded = true;
